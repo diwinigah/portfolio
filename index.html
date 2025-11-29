@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <header>
+
+        <h1>SAGUINTAAH B D Nathanael</h1>
+        <nav>
+            <ul>
+                <li> <a href="#accueil">Accueil</a></li>
+                <li> <a href="#lien">A propos </a></li>
+                <li> <a href="#competence">Compétences</a></li>
+                <li><a href="#projet1"> Réalisations</a></li>
+
+            </ul>
+            <a class="btna" href="./document/CV développeur informatique design jaune.pdf"
+                download="CV développeur informatique design jaune.pdf" type="application/pdf">Télécharger CV</a>
+        </nav>
+    </header>
+    <main>
+        <section id="accueil">
+            <div class="description">
+                <h5>Développeure web </h5><br>
+                <h3>Bienvenue , je m'appelle</h3><br>
+                <h4>SAGUINTAAH B D Nathanael</h4><br>
+                <p> Accéder mon univers créatif et plongez dans des solutions digitales innovantes , conçues pour
+                    séduire , inspirer et sublimer chaque idée.</p>
+                <div>
+                    <br> <button id="bnt" onclick="window.location='#contact'" type="button"
+                        title="En savoir plus">Nous-Contactez</button>
+                    <button class="bnt1" onclick="window.location='#réseaux'" type="button"
+                        title="Voir mes réalisations">Réseaux sociaux</button>
+                </div>
+            </div>
+            <div class="image">
+
+                <img src="./image/IMG_20240816_125451_255@1552248356.jpg" alt="ma photo">
+            </div>
+
+
+        </section>
+        <div id="bulle-container" aria-label="Bulles colorées"></div>
+        <section>
+
+            <div id="lien" class="a-propos about">
+                <h5> A Propos de moi </h5>
+                <p class="colone">Développeure web passionné . Curieux ,motivé et créatif , j'aime apprendre en continu
+                    et
+                    relever de nouveaux défis
+                    techniques. Mon objectif : créer des solution digitales propres , efficaces et addaptées aux besoins
+                    réels des utilisateurs. </p>
+                <div class="start">
+                    <div><span class="sp">+5</span>Projet Réaliser</div>
+                    <div><span class="sp">+ 2 mois</span> Année d'experience </div>
+                    <div><span class="sp">+1</span>Client satisfaits</div>
+                </div>
+
+            </div>
+
+        </section>
+        <h6 id="projet1"> Mes réalisations </h6>
+        <section id="projet" class="projet">
+
+            <div class="projet-grid">
+
+                <div class="projet-cadre"> Manipulation du DOM </div>
+                <div class="projet-cadre"> Calcule , Condition , Boucle </div>
+                <div class="projet-cadre">Page d'Acceui</div>
+                <div class="projet-cadre">Reproduction visuelles </div>
+            </div>
+        </section>
+        <div>
+            <p id="competence"> Mes compétences en developpement web </p>
+            <div id="skill">
+                <div class="skill">
+                    <span class="pan">HTML</span>
+                    <div class="bar">
+                        <div class="progress pst1">
+                        </div>
+                    </div>50%
+                </div>
+                <div class="skill"><span class="pan">CSS </span>
+                    <div class="bar">
+                        <div class="progress pst2"></div>
+                    </div>40%
+                </div>
+                <div class="skill"> <span class="pan">JavaScript</span>
+                    <div class="bar">
+                        <div class="progress pst3"> </div>
+                    </div>40%
+                </div>
+
+            </div>
+        </div>
+        <section>
+
+            <div id="contact" class="contacts">
+                <p>Contactez-nous </p>
+
+                <div class="log"> <img class="logo" src="./image/logo Appel.png" alt=" contact">+228 93 40 37 68 </div>
+
+                <div class="log"> <img class="logo" src="./image/logo messagerie.png" alt="logo"> winidorc1@gmail.com
+                </div>
+                <div class="log"> <img class="logo" src="./image/logo location.jpg" alt="logo">Lomé /Togo </div>
+            </div>
+            <form action="https://formspree.io/f/mqavwnqz" method="post">
+                <input type="text" placeholder="Votre Nom" required>
+                <input type="email" name="email" placeholder="Votre email" required>
+                <input type="text" placeholder="Votre Numéro" required>
+                <textarea name="message" placeholder="Votre message" required></textarea>
+                <button type="submit" class="sumi" title="Envoyer le message"
+                    aria-label="Envoyer le message">Envoyer</button>
+
+            </form>
+
+        </section>
+    </main>
+    <footer>
+        <section>
+
+            <div> <a href="#lien">Approps</a> </div>
+            <div> <a href="#accueil">Accueil</a> </div>
+            <div> <a href="#projet1"> Mes Réalisations</a></div>
+        </section>
+        <p id="réseaux"> Suivez moi sur les réseaux sociaux </p>
+        <div class="logo1">
+            <a href="https://www.facebook.com/nathanael.saguintaah" target="_blank"> <img class="logo"
+                    src="./image/logo Facebook.png" alt=" Facebook"></a>
+            <a href="https://www.linkedin.com/in/nathanael-saguintaah-b-4b1a1631b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app
+
+" target="_blank"> <img class="logo2"
+                    src="./image/social_media_icons_flat_shadow_set_512x512_0010_linkedin_icon-icons.com_76459.png"
+                    alt="lindine"></a>
+        </div>
+    </footer>
+
+
+    <script src="index.js"></script>
+</body>
+
+</html>
