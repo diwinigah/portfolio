@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <style>
+      .tools-icon { fill: none; stroke: #6366f1; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+      .tools-fill { fill: #6366f1; }
+    </style>
+  </defs>
+  <path d="M 20 60 L 35 45 L 45 55 L 60 40 L 70 50" class="tools-icon"/>
+  <circle cx="25" cy="70" r="8" class="tools-icon"/>
+  <path d="M 25 62 L 25 78 M 17 70 L 33 70" class="tools-icon"/>
+  <circle cx="70" cy="75" r="6" class="tools-icon"/>
+  <line x1="64" y1="75" x2="76" y2="75" class="tools-icon"/>
+</svg>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <style>
+      .lightning-icon { fill: #6366f1; }
+      .lightning-stroke { fill: none; stroke: #6366f1; stroke-width: 2; stroke-linecap: round; }
+    </style>
+  </defs>
+  <polygon points="50,15 65,45 50,45 70,85 30,50 50,50" class="lightning-icon"/>
+  <circle cx="50" cy="50" r="40" class="lightning-stroke"/>
+</svg>
