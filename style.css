@@ -559,9 +559,13 @@ section {
 }
 
 .project-image .icon-img {
-    max-width: 80px;
-    max-height: 80px;
+    max-width: 95%;
+    max-height: 95%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
     opacity: 0.9;
+    display: block;
 }
 
 .project-card:hover .project-image .icon-img {
