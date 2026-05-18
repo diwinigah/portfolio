@@ -1205,6 +1205,68 @@
                 height: 210px;
             }
         }
+
+        /* Requested final fixes */
+        .about {
+            background: #171717;
+            color: #ffffff;
+        }
+
+        .about .section-title,
+        .about .section-title span,
+        .about .stat-label {
+            color: #ffffff;
+        }
+
+        .about .section-subtitle,
+        .about .about-text p {
+            color: rgba(255, 255, 255, 0.76);
+        }
+
+        .about .stat {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(255, 255, 255, 0.12);
+            box-shadow: none;
+        }
+
+        .about .stat-number {
+            color: #f2d6d6;
+        }
+
+        .hero-image img {
+            aspect-ratio: auto;
+            max-width: 430px;
+            max-height: 560px;
+            object-fit: contain;
+            object-position: top center;
+            background: transparent;
+            border: 0;
+        }
+
+        @media (max-width: 768px) {
+            nav.active {
+                top: 72px;
+                background: #ffffff;
+                border-top: 1px solid rgba(111, 45, 244, 0.12);
+                box-shadow: 0 22px 45px rgba(31, 24, 54, 0.14);
+            }
+
+            nav.active a {
+                color: #171717;
+                display: block;
+                padding: 0.65rem 0;
+            }
+
+            nav.active a.active,
+            nav.active a:hover {
+                color: var(--primary);
+            }
+
+            .hero-image img {
+                width: min(86vw, 360px);
+                max-height: 520px;
+            }
+        }
     </style>
 </head>
 <body>
