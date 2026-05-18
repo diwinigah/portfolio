@@ -1105,12 +1105,18 @@
             background: transparent;
             box-shadow: none;
             padding-bottom: 0.5rem;
+            cursor: pointer;
         }
 
         .project-card:hover {
             transform: translateY(-8px);
             border-color: transparent;
             box-shadow: none;
+        }
+
+        .project-card:focus-within {
+            outline: 3px solid rgba(111, 45, 244, 0.28);
+            outline-offset: 10px;
         }
 
         .project-card::after {
@@ -1662,6 +1668,27 @@
 
         document.querySelectorAll('.service-card, .skill-item, .project-card, .testimonial-card').forEach(el => {
             observer.observe(el);
+        });
+
+        // Make the full project card open the same link as its image
+        document.querySelectorAll('.project-card').forEach(card => {
+            const projectLink = card.querySelector('.project-image a[href]');
+            if (!projectLink) return;
+
+            card.setAttribute('tabindex', '0');
+            card.setAttribute('role', 'link');
+
+            card.addEventListener('click', event => {
+                if (event.target.closest('a')) return;
+                window.open(projectLink.href, projectLink.target || '_self');
+            });
+
+            card.addEventListener('keydown', event => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    window.open(projectLink.href, projectLink.target || '_self');
+                }
+            });
         });
     </script>
 </body>
