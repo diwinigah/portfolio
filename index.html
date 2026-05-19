@@ -383,24 +383,64 @@
         }
 
         .skill-item {
-            background: rgba(99, 102, 241, 0.05);
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+            background: transparent;
             padding: 1.5rem;
             border-radius: 10px;
             text-align: center;
             border: 1px solid rgba(99, 102, 241, 0.1);
             transition: all 0.3s ease;
+            z-index: 0;
+        }
+
+        .skill-item > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .skill-item::before,
+        .skill-item::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: inherit;
+            transition: all 0.3s ease;
+            z-index: -1;
+        }
+
+        .skill-item::before {
+            background: #ffffff;
+            clip-path: polygon(0 0, 100% 100%, 0 100%);
+        }
+
+        .skill-item::after {
+            background: #6f2df4;
+            clip-path: polygon(0 0, 100% 0, 100% 100%);
         }
 
         .skill-item:hover {
-            background: rgba(99, 102, 241, 0.1);
+            background: transparent;
             transform: scale(1.05);
             box-shadow: 0 10px 30px rgba(99, 102, 241, 0.15);
         }
 
+        .skill-item:hover::after {
+            background: #5f24d6;
+        }
+
         .skill-name {
             font-weight: 600;
-            color: var(--primary);
+            color: #171717;
             margin-bottom: 0.5rem;
+        }
+
+        .skill-item p {
+            color: #171717;
         }
 
         /* Projects Section */
@@ -957,6 +997,23 @@
             box-shadow: 0 18px 50px rgba(38, 28, 69, 0.08);
         }
 
+        .skill-item {
+            background: transparent;
+        }
+
+        .skill-item::before {
+            background: #ffffff;
+        }
+
+        .skill-item::after {
+            background: hsl(261, 14%, 71%);
+        }
+
+        .skill-item .skill-name,
+        .skill-item p {
+            color: #171717;
+        }
+
         .stat {
             border-left: 0;
         }
@@ -971,6 +1028,14 @@
         .skill-item:hover {
             background: #ffffff;
             box-shadow: 0 28px 70px rgba(111, 45, 244, 0.16);
+        }
+
+        .skill-item:hover {
+            background: transparent;
+        }
+
+        .skill-item:hover::after {
+            background: #855cd978(8.5);
         }
 
         .service-icon,
