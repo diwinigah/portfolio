@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SAGUINTAAH B D Nathanael - Développeur Web & Mobile | Portfolio</title>
-    <!-- EmailJS -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/index.min.js"></script>
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
@@ -623,6 +621,25 @@
         .submit-btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+        }
+
+        .submit-btn:disabled {
+            cursor: not-allowed;
+            opacity: 0.7;
+            transform: none;
+        }
+
+        .form-status {
+            min-height: 1.4rem;
+            font-weight: 600;
+        }
+
+        .form-status--success {
+            color: #22c55e;
+        }
+
+        .form-status--error {
+            color: #ef4444;
         }
 
         /* Footer */
@@ -1534,27 +1551,28 @@
                 </div>
             </div>
 
-            <form class="contact-form" id="contactForm">
+            <form action="https://formspree.io/f/mqavwnqz" method="post" class="contact-form" id="contactForm" >
                 <div class="form-group">
                     <label for="name">Nom complet</label>
-                    <input type="text" id="name" name="name" required>
+                    <input type="text" id="name" name="name" placeholder="Votre Nom" required>
                 </div>
 
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
+                    <input type="email" id="email" name="email"  placeholder="Votre email exmple.@gmail.com" required>
                 </div>
 
                 <div class="form-group">
                     <label for="subject">Sujet</label>
-                    <input type="text" id="subject" name="subject" required>
+                    <input type="text" id="subject" name="subject" placeholder="Sujet" required>
                 </div>
 
                 <div class="form-group">
                     <label for="message">Message</label>
-                    <textarea id="message" name="message" required></textarea>
+                    <textarea id="message" name="message" placeholder="Ecrit votre message ..." required></textarea>
                 </div>
 
+                <p id="contactFormStatus" class="form-status" role="status" aria-live="polite"></p>
                 <button type="submit" class="submit-btn">Envoyer le message</button>
             </form>
         </div>
@@ -1586,12 +1604,6 @@
             <p>Développeur Web & Mobile | Lomé, Togo</p>
         </div>
     </footer>
-
-    <!-- EmailJS Library -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/index.min.js"></script>
-
-    <!-- Email Handler Script -->
-    <script src="./email-handler.js"></script>
 
     <script>
         // Navigation
@@ -1632,24 +1644,50 @@
             });
         });
 
-        // Contact Form
+        // Contact Form - AJAX Formspree submission
         const contactForm = document.getElementById('contactForm');
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
+        const contactFormStatus = document.getElementById('contactFormStatus');
+        const contactSubmitButton = contactForm.querySelector('button[type="submit"]');
+        const contactSubmitLabel = contactSubmitButton.textContent;
+        const formspreeEndpoint = 'https://formspree.io/f/mqavwnqz';
 
-            // Simple validation
-            if (name && email && subject && message) {
-                // Send email via mailto
-                const mailtoLink = `mailto:winidorc1@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Nom: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
-                window.location.href = mailtoLink;
+        contactForm.addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            // Reset the visible status before each submission attempt.
+            contactFormStatus.textContent = '';
+            contactFormStatus.className = 'form-status';
+
+            contactSubmitButton.disabled = true;
+            contactSubmitButton.textContent = 'Envoi en cours...';
+
+            try {
+                // FormData preserves the existing input names expected by Formspree.
+                const formData = new FormData(contactForm);
+
+                const response = await fetch(formspreeEndpoint, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        Accept: 'application/json'
+                    }
+                });
+
+                if (!response.ok) {
+                    throw new Error('Formspree returned an unsuccessful response.');
+                }
+
                 contactForm.reset();
-                alert('Merci! Votre message a été envoyé.');
-            } else {
-                alert('Veuillez remplir tous les champs.');
+                contactFormStatus.textContent = 'Merci, votre message a bien été envoyé.';
+                contactFormStatus.classList.add('form-status--success');
+            } catch (error) {
+                // Keep technical details in the console and show a helpful user-facing message.
+                console.error('Erreur lors de l\'envoi du formulaire:', error);
+                contactFormStatus.textContent = 'Une erreur est survenue. Veuillez réessayer dans quelques instants.';
+                contactFormStatus.classList.add('form-status--error');
+            } finally {
+                contactSubmitButton.disabled = false;
+                contactSubmitButton.textContent = contactSubmitLabel;
             }
         });
 
