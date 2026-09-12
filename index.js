@@ -4,12 +4,17 @@
         const navLinks = document.querySelectorAll('.nav-link');
 
         menuToggle.addEventListener('click', () => {
-            nav.classList.toggle('active');
+            const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+            nav.classList.toggle('active', !isExpanded);
+            menuToggle.setAttribute('aria-expanded', String(!isExpanded));
+            menuToggle.setAttribute('aria-label', !isExpanded ? 'Fermer le menu de navigation' : 'Ouvrir le menu de navigation');
         });
 
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 nav.classList.remove('active');
+                menuToggle.setAttribute('aria-expanded', 'false');
+                menuToggle.setAttribute('aria-label', 'Ouvrir le menu de navigation');
                 navLinks.forEach(l => l.classList.remove('active'));
                 link.classList.add('active');
             });

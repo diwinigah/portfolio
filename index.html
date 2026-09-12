@@ -13,8 +13,8 @@
     <header>
         <div class="header-container">
             <a href="#" class="logo">SB D Nathanael</a>
-            <button class="menu-toggle">☰</button>
-            <nav>
+            <button class="menu-toggle" type="button" aria-label="Ouvrir le menu de navigation" aria-controls="main-navigation" aria-expanded="false">☰</button>
+            <nav id="main-navigation">
                 <ul>
                     <li><a href="#accueil" class="nav-link active">Accueil</a></li>
                     <li><a href="#apropos" class="nav-link">À propos</a></li>
@@ -36,7 +36,7 @@
                 <p>Développeur Web & Mobile passionné. Je crée des solutions numériques innovantes et performantes pour vos projets.</p>
                 <div class="hero-buttons">
                     <a href="#competences" class="btn btn-primary">Voir mes Compétences</a>
-                    <a href="https://wa.me/22893403768" target="_blank" class="btn btn-secondary">Obtenir mon CV</a>
+                    <a href="./document/CV_SAGUINTAAH_B_D_Nathanael_Lomé%20(1).docx" download target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Télécharger mon CV</a>
                 </div>
             </div>
             <div class="hero-image">
@@ -52,9 +52,9 @@
         
         <div class="about-content">
             <div class="about-text">
-                <p> Passionné par le développement web et mobile . Avec une expertise en développement front-end et back-end, je transforme les idées en solutions numériques concrètes et efficaces. Basé à Lomé, Togo</p>
-                <p>Mon objectif est de créer des applications modernes, intuitives et performantes qui répondent aux besoins réels des utilisateurs.</p>
-                <p>Forte expérience avec les technologies web modernes, les frameworks JavaScript, et le développement d'applications mobiles.</p>
+                                <p>Développeur web et mobile, formé au développement Full Stack dans le cadre du programme D-Clic de l'Organisation Internationale de la Francophonie, j'interviens sur l'ensemble de la chaîne de développement : conception de bases de données, création d'API REST avec PHP et Laravel, et développement d'interfaces modernes en JavaScript et React. Basé à Lomé, au Togo, je transforme les besoins en solutions numériques concrètes et efficaces.</p>
+                                <p>Mon objectif est de concevoir des applications modernes, intuitives et performantes, adaptées aux besoins réels des utilisateurs.</p>
+                                <p>J'ai développé plusieurs applications de bout en bout, du cahier des charges à la mise en ligne : une plateforme numérique complète avec back-office, authentification et sécurité, une application de gestion pour garages automobiles, ainsi qu'un site de bibliothèque en PHP natif. Autonome et rigoureux, j'accorde une attention particulière à la sécurité, notamment à la protection contre les injections SQL, les attaques XSS et les attaques CSRF, ainsi qu'à la qualité du code à travers l'utilisation de Git et la documentation. Je m'intéresse également à la conception d'interfaces avec Figma, en complément de mon travail de développement.</p>
             </div>
             
             <div class="about-stats">
@@ -171,21 +171,39 @@
             </div>
 
             <div class="skill-item">
-                <div class="skill-name">No-Code</div>
-                <img class="skill-icon" src="./icons/tools.svg" alt="Icône No-Code">
-                <p>Zapier, Make et autres plateformes</p>
+                <div class="skill-name">App Inventor</div>
+                <img class="skill-icon" src="./icons/tools.svg" alt="Icône App Inventor">
+                <p>App Inventor et création d'applications mobiles Android sans code</p>
             </div>
 
             <div class="skill-item">
-                <div class="skill-name">Low-Code</div>
-                <img class="skill-icon" src="./icons/lightning.svg" alt="Icône Low-Code">
-                <p>Rapidité et efficacité</p>
+                <div class="skill-name">FlutterFlow</div>
+                <img class="skill-icon" src="./icons/lightning.svg" alt="Icône FlutterFlow">
+                <p>Développement d'applications web et mobiles Low-Code</p>
+            </div>
+
+            <div class="skill-item">
+                <div class="skill-name">Firebase Firestore</div>
+                <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-original.svg" alt="Logo Firebase">
+                <p>Base de données NoSQL pour applications mobiles</p>
+            </div>
+
+            <div class="skill-item">
+                <div class="skill-name">SQLite</div>
+                <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original.svg" alt="Logo SQLite">
+                <p>Base de données locale pour applications mobiles</p>
             </div>
 
             <div class="skill-item">
                 <div class="skill-name">Git & GitHub</div>
                 <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="Logo GitHub">
                 <p>Contrôle de version</p>
+            </div>
+
+            <div class="skill-item">
+                <div class="skill-name">Figma</div>
+                <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" alt="Logo Figma">
+                <p>Conception d'interfaces et prototypage</p>
             </div>
         </div>
     </section>
@@ -197,22 +215,24 @@
         
         <div class="projects-grid">
             <div class="project-card fade-in">
-                <div class="project-image"><a href="http://bibliothech.page.gd/" target="_blank" ><img src="./siteimg/biblio.png" alt="Gestion de bibliothèque" class="icon-img"/></a></div>
+                <div class="project-image"><a href="http://bibliothech.page.gd/" target="_blank" rel="noopener noreferrer"><img src="./siteimg/biblio.png" alt="Gestion de bibliothèque" class="icon-img"/></a></div>
                 <div class="project-content">
-                    <h3>Plateforme de Gestion de bibliothèque </h3>
-                    <p>Le site de bibliothèque en ligne permet non seulement de rechercher des livres rapidement, mais aussi aux administrateurs d’ajouter ou de retirer des titres de la collection</p>
+                    <h3>Site de bibliothèque en ligne</h3>
+                    <p>Site web développé dans le cadre de ma formation, en PHP natif (sans framework), avec des requêtes SQL directes, Bootstrap, JavaScript et CSS. Le site permet aux visiteurs de rechercher des livres rapidement dans le catalogue, et donne aux administrateurs la possibilité d’ajouter ou de retirer des titres de la collection.</p>
+                    <p><strong>Mon rôle :</strong> Développement complet du projet, seul, en PHP natif sans dépendre d’un framework applicatif.</p>
+                    <p><strong>Fonctionnalités principales :</strong> Recherche de livres pour les visiteurs, ajout de titres par l’administrateur, retrait de titres par l’administrateur.</p>
+                    <p><strong>Technologies :</strong> PHP natif, SQL, Bootstrap, JavaScript, CSS</p>
                     <div class="project-tech">
-                        <span class="tech-tag">PHP</span>
-                        <span class="tech-tag">HTML5</span>
-                        <span class="tech-tag">MySQL</span>
-                        <span class="tech-tag">CSS</span>
-                        <span class="tech-tag">Boostrap</span>
+                        <span class="tech-tag">PHP natif</span>
+                        <span class="tech-tag">SQL</span>
+                        <span class="tech-tag">Bootstrap</span>
                         <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">CSS</span>
                     </div>
                 </div>
             </div>
             <div class="project-card fade-in">
-                <div class="project-image"><a href="https://garagez.kesug.com/public/#accueil" target="_blank" ><img src="./siteimg/garage1.png" alt="Gestion de garage" class="icon-img"/></a></div>
+                <div class="project-image"><a href="https://garagez.kesug.com/public/#accueil" target="_blank" rel="noopener noreferrer"><img src="./siteimg/garage1.png" alt="Gestion de garage" class="icon-img"/></a></div>
                 <div class="project-content">
                     <h3>Application de gestion de garage automobile</h3>
                     <p>Application web développée dans le cadre de ma formation, avec un CRUD complet destiné à la gestion d'un garage automobile. Le site permet aux clients de prendre rendez-vous rapidement pour une réparation, et donne à l'administrateur un espace de gestion complet des véhicules, des techniciens et des réparations.</p>
@@ -326,21 +346,15 @@
     <footer>
         <div class="footer-content">
             <div class="social-links">
-                <a href="https://www.linkedin.com/in/nathanael-saguintaah-b-4b1a1631b?originalSubdomain=tg" target="_blank" title="LinkedIn" class="social-icon-link">
+                <a href="https://www.linkedin.com/in/nathanael-saguintaah-b-4b1a1631b?originalSubdomain=tg" target="_blank" rel="noopener noreferrer" title="LinkedIn" class="social-icon-link">
                     <i class="fab fa-linkedin-in"></i>
                 </a>
-                <a href="https://twitter.com/votre-profil" target="_blank" title="Twitter" class="social-icon-link">
-                    <i class="fab fa-x-twitter"></i>
-                </a>
-                <a href="https://github.com/dashboard" target="_blank" title="GitHub" class="social-icon-link">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="https://www.facebook.com/nathanael.saguintaah" target="_blank" title="Facebook" class="social-icon-link">
+                <a href="https://www.facebook.com/nathanael.saguintaah" target="_blank" rel="noopener noreferrer" title="Facebook" class="social-icon-link">
                     <i class="fab fa-facebook-f"></i>
                 </a>
                 
                 
-                <a href="https://wa.me/22893403768" target="_blank" title="WhatsApp" class="social-icon-link">
+                <a href="https://wa.me/22893403768" target="_blank" rel="noopener noreferrer" title="WhatsApp" class="social-icon-link">
                     <i class="fab fa-whatsapp"></i>
                 </a>
             </div>
