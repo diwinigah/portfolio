@@ -1,3 +1,11 @@
+document.querySelectorAll('.skill-progress').forEach(progress => {
+    const percentage = Math.round((progress.value / progress.max) * 100);
+    const percentageLabel = progress.closest('.skill-proficiency').querySelector('.skill-proficiency-heading span:last-child');
+
+    percentageLabel.textContent = `${percentage}%`;
+    progress.setAttribute('aria-label', `Niveau de maîtrise : ${percentage} %`);
+});
+
 // Navigation js
         const menuToggle = document.querySelector('.menu-toggle');
         const nav = document.querySelector('nav');
