@@ -63,8 +63,10 @@ window.I18N = {
 
         /* Hero */
         'hero.title': "Hello! I'm <span>Nathanael SAGUINTAAH</span>",
-        'hero.text': 'Passionate Web & Mobile Developer. I build innovative, high-performing digital solutions for your projects.',
-        'hero.cta.skills': 'View my Skills',
+        'hero.text': 'Trained in Full Stack development, I build web and mobile applications with Laravel, React and Flutter, from the database to the interface. Based in Lomé, Togo.',
+        'hero.role': 'Web & Mobile Developer',
+        'hero.cta.projects': 'View my Projects',
+        'hero.cta.contact': 'Contact me',
         'hero.cta.cv': 'Download my CV (Word)',
         'hero.cta.cvHref': './document/CV_Nathanael_Saguintaah_.docx',
         'hero.photoAlt': 'Profile photo - Nathanael Saguintaah',

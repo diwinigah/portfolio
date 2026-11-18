@@ -704,3 +704,77 @@ html.theme-switching *::after {
     background: var(--primary);
     color: #ffffff;
 }
+
+/* =========================================================
+   ACCUEIL : titre de poste et boutons
+   ========================================================= */
+
+/* Titre de poste sous le nom */
+.hero-text .hero-role {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin: 0 0 1rem;
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.hero-text .hero-role::before {
+    content: '';
+    width: 36px;
+    height: 2px;
+    border-radius: 2px;
+    background: currentColor;
+    opacity: 0.8;
+}
+
+/* Rangée de boutons : retour à la ligne propre, lien discret en 3e position */
+.hero-buttons {
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.hero-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 14px 8px;
+    color: #ffffff;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.hero-link::after {
+    content: '\2192';
+    transition: transform 0.3s ease;
+}
+
+.hero-link:hover {
+    text-decoration: underline;
+    text-underline-offset: 6px;
+}
+
+.hero-link:hover::after {
+    transform: translateX(4px);
+}
+
+.hero .btn:focus-visible,
+.hero-link:focus-visible {
+    outline: 3px solid #ffffff;
+    outline-offset: 3px;
+    border-radius: 999px;
+}
+
+@media (max-width: 768px) {
+    .hero-text .hero-role {
+        font-size: 0.9rem;
+        letter-spacing: 0.1em;
+    }
+
+    .hero-text .hero-role::before {
+        display: none;
+    }
+}
