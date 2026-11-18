@@ -284,23 +284,14 @@ updateSkillAriaLabels();
             if (statusKey) contactFormStatus.textContent = t(statusKey);
         });
 
-        // Make the full project card open the same link as its image
+        // Toute la carte reste cliquable à la souris ; au clavier, on utilise les boutons de la carte
+        // (liens natifs focalisables), donc la carte n'a plus besoin d'être un faux lien.
         document.querySelectorAll('.project-card').forEach(card => {
-            const projectLink = card.querySelector('.project-image a[href]');
+            const projectLink = card.querySelector('.project-links a[href]');
             if (!projectLink) return;
-
-            card.setAttribute('tabindex', '0');
-            card.setAttribute('role', 'link');
 
             card.addEventListener('click', event => {
                 if (event.target.closest('a')) return;
-                window.open(projectLink.href, projectLink.target || '_self');
-            });
-
-            card.addEventListener('keydown', event => {
-                if (event.key === 'Enter' || event.key === ' ') {
-                    event.preventDefault();
-                    window.open(projectLink.href, projectLink.target || '_self');
-                }
+                window.open(projectLink.href, projectLink.target || '_self', 'noopener,noreferrer');
             });
         });

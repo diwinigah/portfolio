@@ -576,3 +576,131 @@ html.theme-switching *::after {
         font-size: 1.15rem;
     }
 }
+
+/* =========================================================
+   PROJETS : boutons, listes de fonctionnalités, icônes
+   ========================================================= */
+
+/* La flèche décorative est remplacée par de vrais boutons */
+.project-card::after {
+    display: none;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.project-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0 0;
+}
+
+.project-content strong,
+.project-content .project-label {
+    color: #171717;
+}
+
+.project-content .project-label {
+    margin-bottom: 0.3rem;
+    font-weight: 700;
+}
+
+.project-features {
+    margin: 0 0 0.8rem;
+    padding-left: 1.1rem;
+    font-size: 0.82rem;
+    line-height: 1.45;
+    color: #73727d;
+}
+
+.project-features li {
+    margin-bottom: 0.15rem;
+}
+
+/* Étiquettes de technologies avec icône */
+.tech-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.tech-icon {
+    width: 14px;
+    height: 14px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.tech-icon-fa {
+    font-size: 0.75rem;
+}
+
+/* Boutons d'action (Voir le site / Voir le prototype / Code source) */
+.project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: auto;
+    padding-top: 1.1rem;
+}
+
+.project-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.55rem 1.1rem;
+    border-radius: 999px;
+    border: 2px solid transparent;
+    background: linear-gradient(135deg, var(--primary), var(--primary-soft));
+    color: #ffffff;
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 10px 22px rgba(111, 45, 244, 0.22);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+
+.project-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 28px rgba(111, 45, 244, 0.32);
+}
+
+.project-btn:focus-visible {
+    outline: 3px solid rgba(111, 45, 244, 0.45);
+    outline-offset: 3px;
+}
+
+/* Variante « Code source » (optionnelle) */
+.project-btn-ghost {
+    background: transparent;
+    color: var(--primary);
+    border-color: var(--primary);
+    box-shadow: none;
+}
+
+.project-btn-ghost:hover {
+    background: var(--primary);
+    color: #ffffff;
+}
+
+[data-theme="dark"] .project-content strong,
+[data-theme="dark"] .project-content .project-label {
+    color: var(--ink);
+}
+
+[data-theme="dark"] .project-features {
+    color: var(--text);
+}
+
+[data-theme="dark"] .project-btn-ghost {
+    color: var(--primary-soft);
+    border-color: var(--primary-soft);
+}
+
+[data-theme="dark"] .project-btn-ghost:hover {
+    background: var(--primary);
+    color: #ffffff;
+}
