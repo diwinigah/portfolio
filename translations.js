@@ -65,7 +65,8 @@ window.I18N = {
         'hero.title': "Hello! I'm <span>Nathanael SAGUINTAAH</span>",
         'hero.text': 'Passionate Web & Mobile Developer. I build innovative, high-performing digital solutions for your projects.',
         'hero.cta.skills': 'View my Skills',
-        'hero.cta.cv': 'Download my CV (PDF, in French)',
+        'hero.cta.cv': 'Download my CV (Word)',
+        'hero.cta.cvHref': './document/CV_Nathanael_Saguintaah_.docx',
         'hero.photoAlt': 'Profile photo - Nathanael Saguintaah',
 
         /* À propos */
