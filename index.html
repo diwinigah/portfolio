@@ -3,76 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SAGUINTAAH B D Nathanael - Développeur Web & Mobile | Portfolio</title>
+    <title data-i18n="meta.title">SAGUINTAAH B D Nathanael - Développeur Web & Mobile | Portfolio</title>
+    <meta name="description" content="Portfolio de Nathanael Saguintaah, développeur Web & Mobile basé à Lomé (Togo) : sites web, applications Laravel, applications Flutter et prototypes UI/UX." data-i18n-attr="content:meta.description">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link rel="stylesheet" href="index.css">
+        <script>
+        /* Applique le thème avant l'affichage pour éviter un flash blanc */
+        (function () {
+            var theme = null;
+            try { theme = localStorage.getItem('portfolio-theme'); } catch (e) {}
+            if (!theme) {
+                theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            }
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="theme.css">
 </head>
 <body>
     <!-- Header -->
     <header>
         <div class="header-container">
             <a href="#" class="logo">SB D Nathanael</a>
-            <button class="menu-toggle" type="button" aria-label="Ouvrir le menu de navigation" aria-controls="main-navigation" aria-expanded="false">☰</button>
-            <nav id="main-navigation">
+            
+            <nav id="main-navigation" aria-label="Navigation principale" data-i18n-attr="aria-label:nav.aria">
                 <ul>
-                    <li><a href="#accueil" class="nav-link active">Accueil</a></li>
-                    <li><a href="#apropos" class="nav-link">À propos</a></li>
-                    <li><a href="#services" class="nav-link">Services</a></li>
-                    <li><a href="#competences" class="nav-link">Compétences</a></li>
-                    <li><a href="#projets" class="nav-link">Projets</a></li> 
+                    <li><a href="#accueil" class="nav-link active" data-i18n="nav.home">Accueil</a></li>
+                    <li><a href="#apropos" class="nav-link" data-i18n="nav.about">À propos</a></li>
+                    <li><a href="#services" class="nav-link" data-i18n="nav.services">Services</a></li>
+                    <li><a href="#competences" class="nav-link" data-i18n="nav.skills">Compétences</a></li>
+                    <li><a href="#projets" class="nav-link" data-i18n="nav.projects">Projets</a></li> 
                
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                    <li><a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a></li>
                 </ul>
             </nav>
+            <div class="header-actions">
+                <button class="lang-toggle" type="button" aria-label="Passer le site en anglais">
+                    <span data-lang-opt="fr" lang="fr">FR</span>
+                    <span data-lang-opt="en" lang="en">EN</span>
+                </button>
+                <button class="theme-toggle" type="button" aria-label="Activer le mode sombre" aria-pressed="false">
+                    <i class="fas fa-moon icon-moon" aria-hidden="true"></i>
+                    <i class="fas fa-sun icon-sun" aria-hidden="true"></i>
+                </button>
+                <button class="menu-toggle" type="button" aria-label="Ouvrir le menu de navigation" aria-controls="main-navigation" aria-expanded="false">
+                    <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                </button>
+            </div>
         </div>
+    <div class="scroll-progress" aria-hidden="true"></div>
     </header>
 
     <!-- Hero Section -->
     <section id="accueil" class="hero">
         <div class="hero-content">
             <div class="hero-text">
-                <h1>Bonjour! Je suis  <span>  Nathanael  SAGUINTAAH </span></h1>
-                <p>Développeur Web & Mobile passionné. Je crée des solutions numériques innovantes et performantes pour vos projets.</p>
+                <h1 data-i18n-html="hero.title">Bonjour! Je suis  <span>  Nathanael  SAGUINTAAH </span></h1>
+                <p data-i18n="hero.text">Développeur Web & Mobile passionné. Je crée des solutions numériques innovantes et performantes pour vos projets.</p>
                 <div class="hero-buttons">
-                    <a href="#competences" class="btn btn-primary">Voir mes Compétences</a>
-                    <a href="./document/CV_Nathanael_Saguintaah_.pdf" download class="btn btn-secondary">Télécharger mon CV (PDF)</a>
+                    <a href="#competences" class="btn btn-primary" data-i18n="hero.cta.skills">Voir mes Compétences</a>
+                    <a href="./document/CV_Nathanael_Saguintaah_.pdf" download class="btn btn-secondary" data-i18n="hero.cta.cv">Télécharger mon CV (PDF)</a>
                 </div>
             </div>
             <div class="hero-image">
-                <img src=./image/nathan.png alt="Photo de profil - Nathanael Saguintaah">
+                <img src="./image/nathan.png" alt="Photo de profil - Nathanael Saguintaah" data-i18n-attr="alt:hero.photoAlt">
             </div>
         </div>
     </section>
 
     <!-- About Section -->
     <section id="apropos" class="about">
-        <h2 class="section-title">À <span>Propos</span></h2>
-        <p class="section-subtitle">Découvrez mon parcours et mes accomplissements</p>
+        <h2 class="section-title" data-i18n-html="about.title">À <span>Propos</span></h2>
+        <p class="section-subtitle" data-i18n="about.subtitle">Découvrez mon parcours et mes accomplissements</p>
         
         <div class="about-content">
             <div class="about-text">
-                                <p>Développeur web et mobile, formé au développement Full Stack dans le cadre du programme D-Clic de l'Organisation Internationale de la Francophonie, j'interviens sur l'ensemble de la chaîne de développement : conception de bases de données, création d'API REST avec PHP et Laravel, et développement d'interfaces modernes en JavaScript et React. Basé à Lomé, au Togo, je transforme les besoins en solutions numériques concrètes et efficaces.</p>
-                                <p>Mon objectif est de concevoir des applications modernes, intuitives et performantes, adaptées aux besoins réels des utilisateurs.</p>
-                                <p>J'ai développé plusieurs applications de bout en bout, du cahier des charges à la mise en ligne : une plateforme numérique complète avec back-office, authentification et sécurité, une application de gestion pour garages automobiles, ainsi qu'un site de bibliothèque en PHP natif. Autonome et rigoureux, j'accorde une attention particulière à la sécurité, notamment à la protection contre les injections SQL, les attaques XSS et les attaques CSRF, ainsi qu'à la qualité du code à travers l'utilisation de Git et la documentation. Je m'intéresse également à la conception d'interfaces avec Figma, en complément de mon travail de développement.</p>
+                <p data-i18n="about.p1">Développeur web et mobile, formé au développement Full Stack dans le cadre du projet D-Clic de l'Organisation Internationale de la Francophonie, j'interviens sur l'ensemble de la chaîne de développement : conception de bases de données, création d'API REST avec PHP et Laravel, et développement d'interfaces modernes en JavaScript et React. Basé à Lomé, au Togo, je transforme les besoins en solutions numériques concrètes et efficaces.</p>
+                <p data-i18n="about.p2">Mon objectif est de concevoir des applications modernes, intuitives et performantes, adaptées aux besoins réels des utilisateurs.</p>
+                <p data-i18n="about.p3">J'ai développé plusieurs applications de bout en bout, du cahier des charges à la mise en ligne : une plateforme numérique complète avec back-office, authentification et sécurité, une application de gestion pour garages automobiles, ainsi qu'un site de bibliothèque en PHP natif. Autonome et rigoureux, j'accorde une attention particulière à la sécurité, notamment à la protection contre les injections SQL, les attaques XSS et les attaques CSRF, ainsi qu'à la qualité du code à travers l'utilisation de Git et la documentation. Je m'intéresse également à la conception d'interfaces avec Figma, en complément de mon travail de développement.</p>
             </div>
             
             <div class="about-stats">
                 <div class="stat">
                     <div class="stat-number">3+</div>
-                    <div class="stat-label">Projets Réalisés</div>
+                    <div class="stat-label" data-i18n="about.stat.projects">Projets Réalisés</div>
                 </div>
                 <div class="stat">
                     <div class="stat-number">3+</div>
-                    <div class="stat-label">Clients Satisfaits</div>
+                    <div class="stat-label" data-i18n="about.stat.clients">Clients Satisfaits</div>
                 </div>
                 <div class="stat">
                     <div class="stat-number">1+</div>
-                    <div class="stat-label">Années Expérience</div>
+                    <div class="stat-label" data-i18n="about.stat.experience">Années Expérience</div>
                 </div>
                 <div class="stat">
                     <div class="stat-number">100%</div>
-                    <div class="stat-label">Qualité Garantie</div>
+                    <div class="stat-label" data-i18n="about.stat.quality">Qualité Garantie</div>
                 </div>
             </div>
         </div>
@@ -80,48 +110,48 @@
 
     <!-- Services Section -->
      <section id="services" class="services">
-        <h2 class="section-title">Mes <span>Services</span></h2>
-        <p class="section-subtitle">Solutions complètes pour vos besoins numériques</p>
+        <h2 class="section-title" data-i18n-html="services.title">Mes <span>Services</span></h2>
+        <p class="section-subtitle" data-i18n="services.subtitle">Solutions complètes pour vos besoins numériques</p>
         
         <div class="services-grid">
             <div class="service-card">
-                <div class="service-icon"><img src="./icons/web.svg" alt="Web Development" class="icon-img"/></div>
-                <h3>Développement Web</h3>
-                <p>Création de sites web modernes, responsifs et performants. Utilisation des technologies les plus récentes pour une expérience utilisateur optimale.</p>
+                <div class="service-icon"><img src="./icons/web.svg" alt="Développement Web" data-i18n-attr="alt:services.web.title" class="icon-img"/></div>
+                <h3 data-i18n="services.web.title">Développement Web</h3>
+                <p data-i18n="services.web.text">Création de sites web modernes, responsifs et performants. Utilisation des technologies les plus récentes pour une expérience utilisateur optimale.</p>
             </div>
 
             <div class="service-card">
-                <div class="service-icon"><img src="./icons/mobile.svg" alt="Mobile Development" class="icon-img"/></div>
-                <h3>Développement Mobile</h3>
-                <p>Applications mobiles natives et cross-platform. Conception intuitive et fonctionnalités avancées pour une meilleure engagement utilisateur.</p>
+                <div class="service-icon"><img src="./icons/mobile.svg" alt="Développement Mobile" data-i18n-attr="alt:services.mobile.title" class="icon-img"/></div>
+                <h3 data-i18n="services.mobile.title">Développement Mobile</h3>
+                <p data-i18n="services.mobile.text">Applications mobiles natives et cross-platform. Conception intuitive et fonctionnalités avancées pour un meilleur engagement utilisateur.</p>
             </div>
 
             <div class="service-card">
-                <div class="service-icon"><img src="./icons/tools.svg" alt="WordPress & CMS" class="icon-img"/></div>
-                <h3>WordPress & CMS</h3>
-                <p>Solutions WordPress professionnelles et personnalisées. Intégration de plugins, optimisation SEO et gestion de contenu facile.</p>
+                <div class="service-icon"><img src="./icons/tools.svg" alt="WordPress & CMS" data-i18n-attr="alt:services.cms.title" class="icon-img"/></div>
+                <h3 data-i18n="services.cms.title">WordPress & CMS</h3>
+                <p data-i18n="services.cms.text">Solutions WordPress professionnelles et personnalisées. Intégration de plugins, optimisation SEO et gestion de contenu facile.</p>
             </div>
 
             <div class="service-card">
-                <div class="service-icon"><img src="./icons/lightning.svg" alt="No-Code & Low-Code" class="icon-img"/></div>
-                <h3>No-Code & Low-Code</h3>
-                <p>Solutions rapides avec les plateformes no-code et low-code. Automatisation des processus et prototypage rapide de vos concepts.</p>
+                <div class="service-icon"><img src="./icons/lightning.svg" alt="No-Code & Low-Code" data-i18n-attr="alt:services.nocode.title" class="icon-img"/></div>
+                <h3 data-i18n="services.nocode.title">No-Code & Low-Code</h3>
+                <p data-i18n="services.nocode.text">Solutions rapides avec les plateformes no-code et low-code. Automatisation des processus et prototypage rapide de vos concepts.</p>
             </div>
         </div>
     </section> 
 
     <!-- Skills Section -->
     <section id="competences" class="skills">
-        <h2 class="section-title">Mes <span>Compétences</span></h2>
-        <p class="section-subtitle">Technologies et outils que je maîtrise</p>
+        <h2 class="section-title" data-i18n-html="skills.title">Mes <span>Compétences</span></h2>
+        <p class="section-subtitle" data-i18n="skills.subtitle">Technologies et outils que je maîtrise</p>
         
         <div class="skills-container">
             <div class="skill-item">
                 <div class="skill-name">HTML5</div>
                 <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="Logo HTML5">
-                <p>Structuration sémantique moderne</p>
+                <p data-i18n="skills.html5">Structuration sémantique moderne</p>
                 <div class="skill-proficiency">
-                    <div class="skill-proficiency-heading"><span>Intermédiaire</span><span>75%</span></div>
+                    <div class="skill-proficiency-heading"><span data-i18n="skills.level">Intermédiaire</span><span>75%</span></div>
                     <progress class="skill-progress" value="75" max="100" aria-label="Niveau de maîtrise : 75 %"></progress>
                     <div class="skill-scale" aria-hidden="true"><span>0%</span><span>100%</span></div>
                 </div>
@@ -130,9 +160,9 @@
             <div class="skill-item">
                 <div class="skill-name">CSS3</div>
                 <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="Logo CSS3">
-                <p>Animations et design responsive</p>
+                <p data-i18n="skills.css3">Animations et design responsive</p>
                 <div class="skill-proficiency">
-                    <div class="skill-proficiency-heading"><span>Intermédiaire</span><span>70%</span></div>
+                    <div class="skill-proficiency-heading"><span data-i18n="skills.level">Intermédiaire</span><span>70%</span></div>
                     <progress class="skill-progress" value="70" max="100" aria-label="Niveau de maîtrise : 70 %"></progress>
                     <div class="skill-scale" aria-hidden="true"><span>0%</span><span>100%</span></div>
                 </div>
@@ -141,9 +171,9 @@
             <div class="skill-item">
                 <div class="skill-name">JavaScript</div>
                 <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="Logo JavaScript">
-                <p>ES6+ et programmation asynchrone</p>
+                <p data-i18n="skills.js">ES6+ et programmation asynchrone</p>
                 <div class="skill-proficiency">
-                    <div class="skill-proficiency-heading"><span>Intermédiaire</span><span>45%</span></div>
+                    <div class="skill-proficiency-heading"><span data-i18n="skills.level">Intermédiaire</span><span>45%</span></div>
                     <progress class="skill-progress" value="45" max="100" aria-label="Niveau de maîtrise : 45 %"></progress>
                     <div class="skill-scale" aria-hidden="true"><span>0%</span><span>100%</span></div>
                 </div>
@@ -152,9 +182,9 @@
             <div class="skill-item">
                 <div class="skill-name">React</div>
                 <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="Logo React">
-                <p>Composants et état d'application</p>
+                <p data-i18n="skills.react">Composants et état d'application</p>
                 <div class="skill-proficiency">
-                    <div class="skill-proficiency-heading"><span>Intermédiaire</span><span>50%</span></div>
+                    <div class="skill-proficiency-heading"><span data-i18n="skills.level">Intermédiaire</span><span>50%</span></div>
                     <progress class="skill-progress" value="50" max="100" aria-label="Niveau de maîtrise : 50 %"></progress>
                     <div class="skill-scale" aria-hidden="true"><span>0%</span><span>100%</span></div>
                 </div>
@@ -163,9 +193,9 @@
             <div class="skill-item">
                 <div class="skill-name">Laravel</div>
                 <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg" alt="Logo Laravel">
-                <p>Framework PHP moderne</p>
+                <p data-i18n="skills.laravel">Framework PHP moderne</p>
                 <div class="skill-proficiency">
-                    <div class="skill-proficiency-heading"><span>Intermédiaire</span><span>55%</span></div>
+                    <div class="skill-proficiency-heading"><span data-i18n="skills.level">Intermédiaire</span><span>55%</span></div>
                     <progress class="skill-progress" value="55" max="100" aria-label="Niveau de maîtrise : 55 %"></progress>
                     <div class="skill-scale" aria-hidden="true"><span>0%</span><span>100%</span></div>
                 </div>
@@ -174,9 +204,9 @@
             <div class="skill-item">
                 <div class="skill-name">PHP</div>
                 <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" alt="Logo PHP">
-                <p>Backend et gestion de base de données</p>
+                <p data-i18n="skills.php">Backend et gestion de base de données</p>
                 <div class="skill-proficiency">
-                    <div class="skill-proficiency-heading"><span>Intermédiaire</span><span>50%</span></div>
+                    <div class="skill-proficiency-heading"><span data-i18n="skills.level">Intermédiaire</span><span>50%</span></div>
                     <progress class="skill-progress" value="50" max="100" aria-label="Niveau de maîtrise : 50 %"></progress>
                     <div class="skill-scale" aria-hidden="true"><span>0%</span><span>100%</span></div>
                 </div>
@@ -185,10 +215,10 @@
             <div class="skill-item">
                 <div class="skill-name">SQL</div>
                 <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="Logo MySQL">
-                <p>Bases de données relationnelles</p>
+                <p data-i18n="skills.sql">Bases de données relationnelles</p>
                 <div class="skill-proficiency">
-                    <div class="skill-proficiency-heading"><span>Intermédiaire</span><span>45%</span></div>
-                    <progress class="skill-progress" value="45" max="100" aria-label="Niveau de maîtrise : 45 %"></progress>    
+                    <div class="skill-proficiency-heading"><span data-i18n="skills.level">Intermédiaire</span><span>45%</span></div>
+                    <progress class="skill-progress" value="45" max="100" aria-label="Niveau de maîtrise : 45 %"></progress>
                     <div class="skill-scale" aria-hidden="true"><span>0%</span><span>100%</span></div>
                 </div>
             </div>
@@ -196,9 +226,9 @@
             <div class="skill-item">
                 <div class="skill-name">WordPress</div>
                 <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/wordpress/wordpress-plain.svg" alt="Logo WordPress">
-                <p>CMS et développement d'extensions</p>
+                <p data-i18n="skills.wordpress">CMS et développement d'extensions</p>
                 <div class="skill-proficiency">
-                    <div class="skill-proficiency-heading"><span>Intermédiaire</span><span>35%</span></div>
+                    <div class="skill-proficiency-heading"><span data-i18n="skills.level">Intermédiaire</span><span>35%</span></div>
                     <progress class="skill-progress" value="35" max="100" aria-label="Niveau de maîtrise : 35 %"></progress>
                     <div class="skill-scale" aria-hidden="true"><span>0%</span><span>100%</span></div>
                 </div>
@@ -207,9 +237,9 @@
             <div class="skill-item">
                 <div class="skill-name">Flutter</div>
                 <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg" alt="Logo Flutter">
-                <p>Développement d'applications mobiles</p>
+                <p data-i18n="skills.flutter">Développement d'applications mobiles</p>
                 <div class="skill-proficiency">
-                    <div class="skill-proficiency-heading"><span>Intermédiaire</span><span>50%</span></div>
+                    <div class="skill-proficiency-heading"><span data-i18n="skills.level">Intermédiaire</span><span>50%</span></div>
                     <progress class="skill-progress" value="50" max="100" aria-label="Niveau de maîtrise : 50 %"></progress>
                     <div class="skill-scale" aria-hidden="true"><span>0%</span><span>100%</span></div>
                 </div>
@@ -217,10 +247,10 @@
 
             <div class="skill-item">
                 <div class="skill-name">App Inventor</div>
-                <img class="skill-icon" src="./icons/tools.svg" alt="Icône App Inventor">
-                <p>App Inventor et création d'applications mobiles Android sans code</p>
+                <img class="skill-icon" src="./icons/tools.svg" alt="Logo App Inventor">
+                <p data-i18n="skills.appinventor">App Inventor et création d'applications mobiles Android sans code</p>
                 <div class="skill-proficiency">
-                    <div class="skill-proficiency-heading"><span>Intermédiaire</span><span>64%</span></div>
+                    <div class="skill-proficiency-heading"><span data-i18n="skills.level">Intermédiaire</span><span>64%</span></div>
                     <progress class="skill-progress" value="64" max="100" aria-label="Niveau de maîtrise : 64 %"></progress>
                     <div class="skill-scale" aria-hidden="true"><span>0%</span><span>100%</span></div>
                 </div>
@@ -228,10 +258,10 @@
 
             <div class="skill-item">
                 <div class="skill-name">FlutterFlow</div>
-                <img class="skill-icon" src="./icons/lightning.svg" alt="Icône FlutterFlow">
-                <p>Développement d'applications web et mobiles Low-Code</p>
+                <img class="skill-icon" src="./icons/lightning.svg" alt="Logo FlutterFlow">
+                <p data-i18n="skills.flutterflow">Développement d'applications web et mobiles Low-Code</p>
                 <div class="skill-proficiency">
-                    <div class="skill-proficiency-heading"><span>Intermédiaire</span><span>50%</span></div>
+                    <div class="skill-proficiency-heading"><span data-i18n="skills.level">Intermédiaire</span><span>50%</span></div>
                     <progress class="skill-progress" value="50" max="100" aria-label="Niveau de maîtrise : 50 %"></progress>
                     <div class="skill-scale" aria-hidden="true"><span>0%</span><span>100%</span></div>
                 </div>
@@ -240,20 +270,20 @@
             <div class="skill-item">
                 <div class="skill-name">Firebase Firestore</div>
                 <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-original.svg" alt="Logo Firebase">
-                <p>Base de données NoSQL pour applications mobiles</p>
+                <p data-i18n="skills.firestore">Base de données NoSQL pour applications mobiles</p>
                 <div class="skill-proficiency">
-                    <div class="skill-proficiency-heading"><span>Intermédiaire</span><span>50%</span></div>
+                    <div class="skill-proficiency-heading"><span data-i18n="skills.level">Intermédiaire</span><span>50%</span></div>
                     <progress class="skill-progress" value="50" max="100" aria-label="Niveau de maîtrise : 50 %"></progress>
                     <div class="skill-scale" aria-hidden="true"><span>0%</span><span>100%</span></div>
                 </div>
             </div>
 
             <div class="skill-item">
-                <div class="skill-name">SQfLite</div>
+                <div class="skill-name">SQLite</div>
                 <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original.svg" alt="Logo SQLite">
-                <p>Base de données locale pour applications mobiles</p>
+                <p data-i18n="skills.sqlite">Base de données locale pour applications mobiles</p>
                 <div class="skill-proficiency">
-                    <div class="skill-proficiency-heading"><span>Intermédiaire</span><span>50%</span></div>
+                    <div class="skill-proficiency-heading"><span data-i18n="skills.level">Intermédiaire</span><span>50%</span></div>
                     <progress class="skill-progress" value="50" max="100" aria-label="Niveau de maîtrise : 50 %"></progress>
                     <div class="skill-scale" aria-hidden="true"><span>0%</span><span>100%</span></div>
                 </div>
@@ -262,9 +292,9 @@
             <div class="skill-item">
                 <div class="skill-name">Git & GitHub</div>
                 <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="Logo GitHub">
-                <p>Contrôle de version</p>
+                <p data-i18n="skills.git">Contrôle de version</p>
                 <div class="skill-proficiency">
-                    <div class="skill-proficiency-heading"><span>Intermédiaire</span><span>78%</span></div>
+                    <div class="skill-proficiency-heading"><span data-i18n="skills.level">Intermédiaire</span><span>78%</span></div>
                     <progress class="skill-progress" value="78" max="100" aria-label="Niveau de maîtrise : 78 %"></progress>
                     <div class="skill-scale" aria-hidden="true"><span>0%</span><span>100%</span></div>
                 </div>
@@ -273,9 +303,9 @@
             <div class="skill-item">
                 <div class="skill-name">Figma</div>
                 <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" alt="Logo Figma">
-                <p>Conception d'interfaces et prototypage</p>
+                <p data-i18n="skills.figma">Conception d'interfaces et prototypage</p>
                 <div class="skill-proficiency">
-                    <div class="skill-proficiency-heading"><span>Intermédiaire</span><span>60%</span></div>
+                    <div class="skill-proficiency-heading"><span data-i18n="skills.level">Intermédiaire</span><span>60%</span></div>
                     <progress class="skill-progress" value="60" max="100" aria-label="Niveau de maîtrise : 60 %"></progress>
                     <div class="skill-scale" aria-hidden="true"><span>0%</span><span>100%</span></div>
                 </div>
@@ -285,20 +315,20 @@
 
     <!-- Projects Section -->
      <section id="projets" class="projects">
-        <h2 class="section-title">Mes <span>Projets</span></h2>
-        <p class="section-subtitle">Découvrez les travaux que j'ai réalisés</p>
+        <h2 class="section-title" data-i18n-html="projects.title">Mes <span>Projets</span></h2>
+        <p class="section-subtitle" data-i18n="projects.subtitle">Découvrez les travaux que j'ai réalisés</p>
         
         <div class="projects-grid">
             <div class="project-card fade-in">
-                <div class="project-image"><a href="https://bibliothech.page.gd/" target="_blank" rel="noopener noreferrer"><img src="./siteimg/biblio.png" alt="Gestion de bibliothèque" class="icon-img"/></a></div>
+                <div class="project-image"><a href="https://bibliothech.page.gd/" target="_blank" rel="noopener noreferrer"><img src="./siteimg/biblio.png" alt="Gestion de bibliothèque" data-i18n-attr="alt:projects.library.alt" class="icon-img"/></a></div>
                 <div class="project-content">
-                    <h3>Site de bibliothèque en ligne</h3>
-                    <p>Site web développé dans le cadre de ma formation, en PHP natif (sans framework), avec des requêtes SQL directes, Bootstrap, JavaScript et CSS. Le site permet aux visiteurs de rechercher des livres rapidement dans le catalogue, et donne aux administrateurs la possibilité d’ajouter ou de retirer des livres de la collection.</p>
-                    <p><strong>Mon rôle :</strong> Développement complet du projet, seul, en PHP natif sans dépendre d’un framework applicatif.</p>
-                    <p><strong>Fonctionnalités principales :</strong> Recherche de livres pour les visiteurs, ajout de titres par l’administrateur, retrait et ajout des livres par l’administrateur.</p>
-                    <p><strong>Technologies :</strong> </p>
+                    <h3 data-i18n="projects.library.title">Site de bibliothèque en ligne</h3>
+                    <p data-i18n="projects.library.text">Site web développé dans le cadre de ma formation, en PHP natif (sans framework), avec des requêtes SQL directes, Bootstrap, JavaScript et CSS. Le site permet aux visiteurs de rechercher des livres rapidement dans le catalogue, et donne aux administrateurs la possibilité d’ajouter ou de retirer des livres de la collection.</p>
+                    <p data-i18n-html="projects.library.role"><strong>Mon rôle :</strong> Développement complet du projet, seul, en PHP natif sans dépendre d’un framework applicatif.</p>
+                    <p data-i18n-html="projects.library.features"><strong>Fonctionnalités principales :</strong> Recherche de livres pour les visiteurs, ajout de titres par l’administrateur, retrait et ajout des livres par l’administrateur.</p>
+                    <p><strong data-i18n="projects.techLabel">Technologies :</strong></p>
                     <div class="project-tech">
-                        <span class="tech-tag">PHP natif</span>
+                        <span class="tech-tag" data-i18n="tags.phpNative">PHP natif</span>
                         <span class="tech-tag">SQL</span>
                         <span class="tech-tag">Bootstrap</span>
                         <span class="tech-tag">JavaScript</span>
@@ -307,13 +337,13 @@
                 </div>
             </div>
             <div class="project-card fade-in">
-                <div class="project-image"><a href="https://garagez.kesug.com/public/#accueil" target="_blank" rel="noopener noreferrer"><img src="./siteimg/garage1.png" alt="Gestion de garage" class="icon-img"/></a></div>
+                <div class="project-image"><a href="https://garagez.kesug.com/public/#accueil" target="_blank" rel="noopener noreferrer"><img src="./siteimg/garage1.png" alt="Gestion de garage" data-i18n-attr="alt:projects.garage.alt" class="icon-img"/></a></div>
                 <div class="project-content">
-                    <h3>Application de gestion de garage automobile</h3>
-                    <p>Application web développée dans le cadre de ma formation, avec un CRUD complet destiné à la gestion d'un garage automobile. Le site permet aux clients de prendre rendez-vous rapidement pour une réparation, et donne à l'administrateur un espace de gestion complet des véhicules, des techniciens et des réparations.</p>
-                    <p><strong>Mon rôle :</strong> Développement complet du projet, seul, du cahier des charges à la mise en ligne.</p>
-                    <p><strong>Fonctionnalités principales :</strong> Prise de rendez-vous pour les clients, gestion des véhicules, gestion des techniciens, suivi des réparations.</p>
-                    <p><strong>Technologies :</strong> Laravel 12</p>
+                    <h3 data-i18n="projects.garage.title">Application de gestion de garage automobile</h3>
+                    <p data-i18n="projects.garage.text">Application web développée dans le cadre de ma formation, avec un CRUD complet destiné à la gestion d'un garage automobile. Le site permet aux clients de prendre rendez-vous rapidement pour une réparation, et donne à l'administrateur un espace de gestion complet des véhicules, des techniciens et des réparations.</p>
+                    <p data-i18n-html="projects.garage.role"><strong>Mon rôle :</strong> Développement complet du projet, seul, du cahier des charges à la mise en ligne.</p>
+                    <p data-i18n-html="projects.garage.features"><strong>Fonctionnalités principales :</strong> Prise de rendez-vous pour les clients, gestion des véhicules, gestion des techniciens, suivi des réparations.</p>
+                    <p><strong data-i18n="projects.techLabel">Technologies :</strong> Laravel 12</p>
                     <div class="project-tech">
                         <span class="tech-tag">PHP</span>
                         <span class="tech-tag">HTML5</span>
@@ -325,15 +355,15 @@
                 </div>
             </div>
             <div class="project-card fade-in">
-                <div class="project-image"><a href="https://www.figma.com/proto/KCW2Ik9MK3ZPw41H8qZ3P1" target="_blank" rel="noopener noreferrer"><img src="./image/UIUX.png" alt="Prototype d'application mobile UI/UX" class="icon-img"/></a></div>
+                <div class="project-image"><a href="https://www.figma.com/proto/KCW2Ik9MK3ZPw41H8qZ3P1" target="_blank" rel="noopener noreferrer"><img src="./image/UIUX.png" alt="Prototype d'application mobile UI/UX" data-i18n-attr="alt:projects.ui.alt" class="icon-img"/></a></div>
                 <div class="project-content">
-                    <h3>Prototype d'application mobile UI/UX</h3>
-                    <p>Conception d'une interface mobile moderne et intuitive, pensée pour offrir une expérience utilisateur claire et agréable.</p>
+                    <h3 data-i18n="projects.ui.title">Prototype d'application mobile UI/UX</h3>
+                    <p data-i18n="projects.ui.text">Conception d'une interface mobile moderne et intuitive, pensée pour offrir une expérience utilisateur claire et agréable.</p>
                     <div class="project-tech">
                         <span class="tech-tag">Figma</span>
                         <span class="tech-tag">UI Design</span>
                         <span class="tech-tag">UX Design</span>
-                        <span class="tech-tag">Prototype interactif</span>
+                        <span class="tech-tag" data-i18n="tags.interactive">Prototype interactif</span>
                     </div>
                 </div>
             </div>
@@ -360,8 +390,8 @@
 
    
     <section id="contact" class="contact">
-        <h2 class="section-title">Me <span>Contacter</span></h2>
-        <p class="section-subtitle">N'hésitez pas à me joindre pour discuter de vos projets</p>
+        <h2 class="section-title" data-i18n-html="contact.title">Me <span>Contacter</span></h2>
+        <p class="section-subtitle" data-i18n="contact.subtitle">N'hésitez pas à me joindre pour discuter de vos projets</p>
         
         <div class="contact-content">
             <div class="contact-info">
@@ -374,17 +404,17 @@
                 </div>
 
                 <div class="contact-item">
-                    <div class="contact-icon"><img src="./icons/phone.svg" alt="Téléphone" class="icon-img"/></div>
+                    <div class="contact-icon"><img src="./icons/phone.svg" alt="Téléphone" data-i18n-attr="alt:contact.phone" class="icon-img"/></div>
                     <div class="contact-details">
-                        <h3>Téléphone</h3>
+                        <h3 data-i18n="contact.phone">Téléphone</h3>
                         <p><a href="tel:+22893403768">+228 93 40 37 68</a></p>
                     </div>
                 </div>
 
                 <div class="contact-item">
-                    <div class="contact-icon"><img src="./icons/location.svg" alt="Localisation" class="icon-img"/></div>
+                    <div class="contact-icon"><img src="./icons/location.svg" alt="Localisation" data-i18n-attr="alt:contact.location" class="icon-img"/></div>
                     <div class="contact-details">
-                        <h3>Localisation</h3>
+                        <h3 data-i18n="contact.location">Localisation</h3>
                         <p>Lomé, Togo</p>
                     </div>
                 </div>
@@ -392,27 +422,27 @@
 
             <form action="https://formspree.io/f/mqavwnqz" method="post" class="contact-form" id="contactForm" >
                 <div class="form-group">
-                    <label for="name">Nom complet</label>
-                    <input type="text" id="name" name="name" placeholder="Votre Nom" required>
+                    <label for="name" data-i18n="contact.form.name">Nom complet</label>
+                    <input type="text" id="name" name="name" placeholder="Votre nom" data-i18n-attr="placeholder:contact.form.namePh" required>
                 </div>
 
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" id="email" name="email"  placeholder="Votre email exmple.@gmail.com" required>
+                    <input type="email" id="email" name="email" placeholder="Votre e-mail (ex. exemple@gmail.com)" data-i18n-attr="placeholder:contact.form.emailPh" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="subject">Sujet</label>
-                    <input type="text" id="subject" name="subject" placeholder="Sujet" required>
+                    <label for="subject" data-i18n="contact.form.subject">Sujet</label>
+                    <input type="text" id="subject" name="subject" placeholder="Sujet" data-i18n-attr="placeholder:contact.form.subjectPh" required>
                 </div>
 
                 <div class="form-group">
                     <label for="message">Message</label>
-                    <textarea id="message" name="message" placeholder="Ecrit votre message ..." required></textarea>
+                    <textarea id="message" name="message" placeholder="Écrivez votre message..." data-i18n-attr="placeholder:contact.form.messagePh" required></textarea>
                 </div>
 
                 <p id="contactFormStatus" class="form-status" role="status" aria-live="polite"></p>
-                <button type="submit" class="submit-btn">Envoyer le message</button>
+                <button type="submit" class="submit-btn" data-i18n="contact.form.submit">Envoyer le message</button>
             </form>
         </div>
     </section>
@@ -436,11 +466,14 @@
                     <i class="fab fa-whatsapp"></i>
                 </a>
             </div>
-            <p>&copy; 2025 SAGUINTAAH B D Nathanael. Tous les droits réservés.</p>
-            <p>Développeur Web & Mobile | Lomé, Togo</p>
+            <p data-i18n="footer.rights">&copy; 2025 SAGUINTAAH B D Nathanael. Tous les droits réservés.</p>
+            <p data-i18n="footer.tagline">Développeur Web & Mobile | Lomé, Togo</p>
         </div>
     </footer>
 
+    <!-- Ordre important : les traductions, puis le moteur i18n, puis le script principal -->
+    <script src="translations.js"></script>
+    <script src="i18n.js"></script>
     <script src="index.js"></script>
 </body>
 </html>
