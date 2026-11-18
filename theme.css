@@ -305,8 +305,8 @@ html.theme-switching *::after {
 /* Hero */
 [data-theme="dark"] .hero {
     background:
-        linear-gradient(135deg, rgba(9, 7, 22, 0.985), rgba(70, 28, 160, 0.95)),
-        url('./pdf-img-6.jpg') center/cover;
+        linear-gradient(135deg, rgba(9, 7, 22, 0.9), rgba(70, 28, 160, 0.84)),
+        url('./image/hero-tech-background.svg') center/cover;
 }
 
 /* Sections */

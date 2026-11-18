@@ -917,8 +917,8 @@
             padding: 7rem 2rem 5rem;
             color: #ffffff;
             background:
-                linear-gradient(135deg, rgba(34, 19, 92, 0.985), rgba(112, 45, 244, 0.965)),
-                url('./pdf-img-6.jpg') center/cover;
+                linear-gradient(135deg, rgba(34, 19, 92, 0.88), rgba(112, 45, 244, 0.82)),
+                url('./image/hero-tech-background.svg') center/cover;
             overflow: hidden;
         }
 
