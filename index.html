@@ -23,8 +23,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="theme.css">
+    <link rel="preload" as="image" href="./image/nathan.png" fetchpriority="high">
 </head>
 <body>
+    <a class="skip-link" href="#accueil" data-i18n="skip.link">Aller au contenu principal</a>
     <!-- Header -->
     <header>
         <div class="header-container">
@@ -72,7 +74,7 @@
                 </div>
             </div>
             <div class="hero-image">
-                <img src="./image/nathan.png" alt="Photo de profil - Nathanael Saguintaah" data-i18n-attr="alt:hero.photoAlt">
+                <img src="./image/nathan.png" alt="Photo de profil - Nathanael Saguintaah" data-i18n-attr="alt:hero.photoAlt" fetchpriority="high" decoding="async">
             </div>
         </div>
     </section>

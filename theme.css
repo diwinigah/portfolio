@@ -778,3 +778,77 @@ html.theme-switching *::after {
         display: none;
     }
 }
+
+/* =========================================================
+   ACCUEIL : hauteur, photo, animations d'entrée, lien d'évitement
+   ========================================================= */
+
+/* Le hero remplit l'écran moins le header fixe (plus de dépassement de 72 px).
+   100svh tient compte de la barre d'adresse des navigateurs mobiles. */
+.hero {
+    min-height: calc(100vh - 72px);
+    min-height: calc(100svh - 72px);
+}
+
+/* Photo : plus de flottement permanent, un léger soulèvement au survol seulement */
+.hero-image img {
+    animation: none;
+    transition: transform 0.5s ease;
+}
+
+.hero-image img:hover {
+    transform: translateY(-10px);
+}
+
+/* Entrées plus courtes et mieux échelonnées : le titre (élément principal) apparaît plus vite */
+.hero-text h1 {
+    animation: slideInLeft 0.6s ease both;
+}
+
+.hero-text .hero-role {
+    animation: slideInLeft 0.6s ease 0.1s both;
+}
+
+.hero-text p:not(.hero-role) {
+    animation: slideInLeft 0.6s ease 0.2s both;
+}
+
+.hero-buttons {
+    animation: slideInLeft 0.6s ease 0.3s both;
+}
+
+.hero-image {
+    animation: slideInRight 0.7s ease both;
+}
+
+/* Lien « Aller au contenu » : invisible, il apparaît au premier appui sur Tab */
+.skip-link {
+    position: fixed;
+    top: 12px;
+    left: 12px;
+    z-index: 2000;
+    padding: 0.7rem 1.2rem;
+    border-radius: 999px;
+    background: #ffffff;
+    color: var(--primary);
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 10px 30px rgba(31, 24, 54, 0.25);
+    transform: translateY(-200%);
+    transition: transform 0.25s ease;
+}
+
+.skip-link:focus {
+    transform: translateY(0);
+    outline: 3px solid var(--primary);
+    outline-offset: 2px;
+}
+
+[data-theme="dark"] .skip-link {
+    background: #171329;
+    color: var(--primary-soft);
+}
+
+[data-theme="dark"] .skip-link:focus {
+    outline-color: var(--primary-soft);
+}

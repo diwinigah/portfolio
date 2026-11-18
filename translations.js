@@ -54,6 +54,7 @@ window.I18N = {
 
         /* Navigation */
         'nav.aria': 'Main navigation',
+        'skip.link': 'Skip to main content',
         'nav.home': 'Home',
         'nav.about': 'About',
         'nav.services': 'Services',
