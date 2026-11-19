@@ -224,7 +224,7 @@ updateSkillAriaLabels();
                 });
             }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
 
-            document.querySelectorAll('.section-title, .section-subtitle, .about-text, .stat, .service-card, .skill-item, .project-card, .contact-item, .contact-form').forEach(el => {
+            document.querySelectorAll('.section-title, .section-subtitle, .about-text, .proof-card, .service-card, .skill-item, .project-card, .contact-item, .contact-form').forEach(el => {
                 const index = Array.prototype.indexOf.call(el.parentElement.children, el);
                 el.classList.remove('fade-in');
                 el.classList.add('reveal');

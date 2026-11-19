@@ -852,3 +852,226 @@ html.theme-switching *::after {
 [data-theme="dark"] .skip-link:focus {
     outline-color: var(--primary-soft);
 }
+
+/* =========================================================
+   ACCUEIL : badge de disponibilité
+   ========================================================= */
+.hero-text .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin: 0 0 1.25rem;
+    padding: 0.45rem 1rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(6px);
+    color: #ffffff;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.hero-badge-dot {
+    width: 9px;
+    height: 9px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: #22c55e;
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.6);
+    animation: badge-pulse 2s ease-out infinite;
+}
+
+@keyframes badge-pulse {
+    0%   { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.6); }
+    70%  { box-shadow: 0 0 0 9px rgba(34, 197, 94, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+}
+
+
+/* =========================================================
+   À PROPOS : fiche rapide, cartes de preuves, bouton
+   (le fond de la section est sombre en mode clair comme en
+   mode sombre, d'où les textes clairs)
+   ========================================================= */
+.about {
+    --about-bg: #171717;
+    --about-card: rgba(255, 255, 255, 0.06);
+    --about-line: rgba(255, 255, 255, 0.12);
+    --about-muted: rgba(255, 255, 255, 0.72);
+}
+
+[data-theme="dark"] .about {
+    --about-bg: #100d1f;
+    --about-card: rgba(255, 255, 255, 0.05);
+    --about-line: rgba(167, 139, 250, 0.2);
+}
+
+.about-content {
+    align-items: start;
+}
+
+/* Fiche rapide */
+.about-facts {
+    list-style: none;
+    display: grid;
+    gap: 0.9rem;
+    margin-top: 1.75rem;
+    padding: 0;
+}
+
+.about-facts li {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    padding: 0.85rem 1rem;
+    border: 1px solid var(--about-line);
+    border-radius: 16px;
+    background: var(--about-card);
+}
+
+.about-facts i {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-soft));
+    color: #ffffff;
+    font-size: 0.95rem;
+}
+
+.about-fact-label {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--about-muted);
+}
+
+.about-fact-value {
+    display: block;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+/* Cartes de preuves (2 x 2) */
+.about-proofs {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+    margin: 0;
+    padding: 0;
+}
+
+.proof-card {
+    padding: 1.5rem;
+    border: 1px solid var(--about-line);
+    border-radius: 22px;
+    background: var(--about-card);
+    transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+}
+
+.proof-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--primary-soft);
+}
+
+.proof-icon {
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    margin-bottom: 1rem;
+    border-radius: 14px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-soft));
+    color: #ffffff;
+    font-size: 1.15rem;
+}
+
+.about .proof-card h3 {
+    margin-bottom: 0.4rem;
+    font-size: 1.05rem;
+    color: #ffffff;
+}
+
+.about .proof-card p {
+    margin: 0;
+    font-size: 0.88rem;
+    line-height: 1.55;
+    color: var(--about-muted);
+}
+
+/* Bouton de fin de section */
+.about-cta {
+    margin-top: 3.5rem;
+    text-align: center;
+}
+
+@media (max-width: 480px) {
+    .about-proofs {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================================================
+   SERVICES : étiquettes de technologies et bouton de contact
+   ========================================================= */
+.service-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.service-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Les étiquettes restent alignées en bas, même si les textes n'ont pas la même longueur */
+.service-tech {
+    justify-content: center;
+    margin-top: auto;
+    padding-top: 1.25rem;
+}
+
+.services-cta {
+    margin-top: 3rem;
+    text-align: center;
+}
+
+/* Sur le fond blanc de la section, le bouton blanc de l'accueil serait invisible */
+.services-cta .btn-primary {
+    background: linear-gradient(135deg, var(--primary), var(--primary-soft));
+    color: #ffffff;
+    box-shadow: 0 18px 40px rgba(111, 45, 244, 0.26);
+}
+
+.services-cta .btn-primary:hover {
+    box-shadow: 0 22px 48px rgba(111, 45, 244, 0.36);
+}
+
+.services-cta .btn:focus-visible {
+    outline: 3px solid rgba(111, 45, 244, 0.45);
+    outline-offset: 3px;
+}
+
+/* Six cartes : 3 colonnes sur ordinateur (3 x 2), 2 sur tablette, 1 sur téléphone */
+.services-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+@media (max-width: 900px) {
+    .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 620px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -5,6 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-i18n="meta.title">SAGUINTAAH B D Nathanael - Développeur Web & Mobile | Portfolio</title>
     <meta name="description" content="Portfolio de Nathanael Saguintaah, développeur Web & Mobile basé à Lomé (Togo) : sites web, applications Laravel, applications Flutter et prototypes UI/UX." data-i18n-attr="content:meta.description">
+    <meta name="theme-color" content="#6f2df4">
+    <meta name="author" content="Nathanael Saguintaah">
+
+    <!-- Aperçu lors du partage du lien (LinkedIn, WhatsApp, Facebook...) -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Portfolio de Nathanael Saguintaah">
+    <meta property="og:title" content="SAGUINTAAH B D Nathanael - Développeur Web & Mobile | Portfolio">
+    <meta property="og:description" content="Portfolio de Nathanael Saguintaah, développeur Web & Mobile basé à Lomé (Togo) : sites web, applications Laravel, applications Flutter et prototypes UI/UX.">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:locale:alternate" content="en_US">
+    <!--
+        À ajouter une fois l'adresse publique du site connue (l'URL doit être complète, en https) :
+        <meta property="og:url" content="https://ADRESSE-DU-SITE/">
+        <meta property="og:image" content="https://ADRESSE-DU-SITE/image/apercu.png">
+        <meta name="twitter:card" content="summary_large_image">
+        <link rel="canonical" href="https://ADRESSE-DU-SITE/">
+    -->
+
+    <!-- Données structurées pour les moteurs de recherche -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Nathanael Saguintaah",
+        "jobTitle": "Développeur Web & Mobile",
+        "address": { "@type": "PostalAddress", "addressLocality": "Lomé", "addressCountry": "TG" },
+        "knowsAbout": ["Laravel", "PHP", "JavaScript", "React", "Flutter", "Figma"],
+        "sameAs": [
+            "https://github.com/diwinigah",
+            "https://www.linkedin.com/in/nathanael-saguintaah-b-4b1a1631b",
+            "https://www.facebook.com/nathanael.saguintaah"
+        ]
+    }
+    </script>
+
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <script>
@@ -64,12 +99,13 @@
     <section id="accueil" class="hero">
         <div class="hero-content">
             <div class="hero-text">
+                <p class="hero-badge"><span class="hero-badge-dot" aria-hidden="true"></span><span data-i18n="hero.badge">Disponible pour un stage ou un emploi</span></p>
                 <h1 data-i18n-html="hero.title">Bonjour&nbsp;! Je suis <span>Nathanael SAGUINTAAH</span></h1>
                 <p class="hero-role" data-i18n="hero.role">Développeur Web & Mobile</p>
                 <p data-i18n="hero.text">Formé au développement Full Stack, je conçois des applications web et mobiles avec Laravel, React et Flutter, de la base de données à l'interface. Basé à Lomé, Togo.</p>
                 <div class="hero-buttons">
                     <a href="#projets" class="btn btn-primary" data-i18n="hero.cta.projects">Voir mes projets</a>
-                    <a href="./document/CV_Nathanael_Saguintaah_.pdf" download class="btn btn-secondary" data-i18n="hero.cta.cv" data-i18n-attr="href:hero.cta.cvHref">Télécharger mon CV (PDF)</a>
+                    <a href="./document/CV_Nathanael_Saguintaah_.pdf" download class="btn btn-secondary" data-i18n="hero.cta.cv" data-i18n-attr="href:hero.cta.cvHref">Télécharger mon CV</a>
                     <a href="#contact" class="hero-link" data-i18n="hero.cta.contact">Me contacter</a>
                 </div>
             </div>
@@ -82,65 +118,125 @@
     <!-- About Section -->
     <section id="apropos" class="about">
         <h2 class="section-title" data-i18n-html="about.title">À <span>Propos</span></h2>
-        <p class="section-subtitle" data-i18n="about.subtitle">Découvrez mon parcours et mes accomplissements</p>
+        <p class="section-subtitle" data-i18n="about.subtitle">Mon parcours, mes réalisations et ma façon de travailler</p>
         
         <div class="about-content">
             <div class="about-text">
-                <p data-i18n="about.p1">Développeur web et mobile, formé au développement Full Stack dans le cadre du projet D-Clic de l'Organisation Internationale de la Francophonie, j'interviens sur l'ensemble de la chaîne de développement : conception de bases de données, création d'API REST avec PHP et Laravel, et développement d'interfaces modernes en JavaScript et React. Basé à Lomé, au Togo, je transforme les besoins en solutions numériques concrètes et efficaces.</p>
-                <p data-i18n="about.p2">Mon objectif est de concevoir des applications modernes, intuitives et performantes, adaptées aux besoins réels des utilisateurs.</p>
-                <p data-i18n="about.p3">J'ai développé plusieurs applications de bout en bout, du cahier des charges à la mise en ligne : une plateforme numérique complète avec back-office, authentification et sécurité, une application de gestion pour garages automobiles, ainsi qu'un site de bibliothèque en PHP natif. Autonome et rigoureux, j'accorde une attention particulière à la sécurité, notamment à la protection contre les injections SQL, les attaques XSS et les attaques CSRF, ainsi qu'à la qualité du code à travers l'utilisation de Git et la documentation. Je m'intéresse également à la conception d'interfaces avec Figma, en complément de mon travail de développement.</p>
+                <p data-i18n="about.intro">Développeur Web & Mobile certifié par l'Organisation Internationale de la Francophonie (OIF, projet D-Clic), formé au développement full-stack avec Laravel, PHP natif et MySQL, ainsi qu'au mobile avec Flutter et App Inventor. J'ai mis ces compétences au service d'une association en développant une plateforme complémentaire, intégrée à la sienne pour former un seul ensemble : gestion des camps et des inscriptions, gestion et publication des projets, suivi du financement. Rigoureux, autonome et attentif à la logique métier comme à la sécurité, je transforme les besoins en solutions concrètes.</p>
+                <ul class="about-facts">
+                    <li><i class="fas fa-location-dot" aria-hidden="true"></i><div><span class="about-fact-label" data-i18n="about.facts.location">Localisation</span><span class="about-fact-value">Lomé, Togo</span></div></li>
+                    <li><i class="fas fa-language" aria-hidden="true"></i><div><span class="about-fact-label" data-i18n="about.facts.languages">Langues</span><span class="about-fact-value" data-i18n="about.facts.languagesValue">Français (excellent), anglais (basique)</span></div></li>
+                    <li><i class="fas fa-briefcase" aria-hidden="true"></i><div><span class="about-fact-label" data-i18n="about.facts.availability">Disponibilité</span><span class="about-fact-value" data-i18n="about.facts.availabilityValue">Stage ou emploi</span></div></li>
+                </ul>
             </div>
             
-            <div class="about-stats">
-                <div class="stat">
-                    <div class="stat-number">3+</div>
-                    <div class="stat-label" data-i18n="about.stat.projects">Projets Réalisés</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">3+</div>
-                    <div class="stat-label" data-i18n="about.stat.clients">Clients Satisfaits</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">1+</div>
-                    <div class="stat-label" data-i18n="about.stat.experience">Années Expérience</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">100%</div>
-                    <div class="stat-label" data-i18n="about.stat.quality">Qualité Garantie</div>
-                </div>
-            </div>
+            <ul class="about-proofs">
+                <li class="proof-card">
+                    <span class="proof-icon" aria-hidden="true"><i class="fas fa-award"></i></span>
+                    <h3 data-i18n="about.proof1.title">Certifié OIF</h3>
+                    <p data-i18n="about.proof1.text">Projet D-Clic de l'OIF, déployé par la structure SAEI-CUBE : développement web et mobile (2025–2026).</p>
+                </li>
+                <li class="proof-card">
+                    <span class="proof-icon" aria-hidden="true"><i class="fas fa-globe"></i></span>
+                    <h3 data-i18n="about.proof2.title">Projet réel en ligne</h3>
+                    <p data-i18n="about.proof2.text">Plateforme complémentaire intégrée à celle d'une association : camps et inscriptions, projets, suivi du financement. Back-office Filament, deux espaces d'authentification, notifications et exports PDF.</p>
+                </li>
+                <li class="proof-card">
+                    <span class="proof-icon" aria-hidden="true"><i class="fas fa-shield-halved"></i></span>
+                    <h3 data-i18n="about.proof3.title">Sécurité</h3>
+                    <p data-i18n="about.proof3.text">Validation par Form Requests, limitation de requêtes, protection CSRF et requêtes préparées.</p>
+                </li>
+                <li class="proof-card">
+                    <span class="proof-icon" aria-hidden="true"><i class="fas fa-rocket"></i></span>
+                    <h3 data-i18n="about.proof4.title">Autonomie</h3>
+                    <p data-i18n="about.proof4.text">Du cahier des charges à la mise en ligne, avec Git et de la documentation.</p>
+                </li>
+            </ul>
+        </div>
+        <div class="about-cta">
+            <a href="#projets" class="btn btn-primary" data-i18n="hero.cta.projects">Voir mes projets</a>
         </div>
     </section>
 
     <!-- Services Section -->
      <section id="services" class="services">
         <h2 class="section-title" data-i18n-html="services.title">Mes <span>Services</span></h2>
-        <p class="section-subtitle" data-i18n="services.subtitle">Solutions complètes pour vos besoins numériques</p>
+        <p class="section-subtitle" data-i18n="services.subtitle">Ce que je peux réaliser pour votre projet, du cahier des charges à la mise en ligne</p>
         
         <div class="services-grid">
             <div class="service-card">
-                <div class="service-icon"><img src="./icons/web.svg" alt="Développement Web" data-i18n-attr="alt:services.web.title" class="icon-img"/></div>
-                <h3 data-i18n="services.web.title">Développement Web</h3>
-                <p data-i18n="services.web.text">Création de sites web modernes, responsifs et performants. Utilisation des technologies les plus récentes pour une expérience utilisateur optimale.</p>
+                <div class="service-icon"><img src="./icons/web.svg" alt="Applications web sur mesure" data-i18n-attr="alt:services.web.title" class="icon-img"/></div>
+                <h3 data-i18n="services.web.title">Applications web sur mesure</h3>
+                <p data-i18n="services.web.text">Sites et applications web avec Laravel, PHP et MySQL : espaces d'administration, authentification sécurisée, notifications et exports PDF.</p>
+                <div class="project-tech service-tech">
+                    <span class="tech-tag"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg" alt="" width="14" height="14" loading="lazy">Laravel</span>
+                    <span class="tech-tag"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" alt="" width="14" height="14" loading="lazy">PHP</span>
+                    <span class="tech-tag"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="" width="14" height="14" loading="lazy">MySQL</span>
+                    <span class="tech-tag"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="" width="14" height="14" loading="lazy">JavaScript</span>
+                </div>
             </div>
 
             <div class="service-card">
-                <div class="service-icon"><img src="./icons/mobile.svg" alt="Développement Mobile" data-i18n-attr="alt:services.mobile.title" class="icon-img"/></div>
-                <h3 data-i18n="services.mobile.title">Développement Mobile</h3>
-                <p data-i18n="services.mobile.text">Applications mobiles natives et cross-platform. Conception intuitive et fonctionnalités avancées pour un meilleur engagement utilisateur.</p>
+                <div class="service-icon"><img src="./icons/computer.svg" alt="API REST et back-end" data-i18n-attr="alt:services.api.title" class="icon-img"/></div>
+                <h3 data-i18n="services.api.title">API REST et back-end</h3>
+                <p data-i18n="services.api.text">Conception d'API REST avec Laravel : routes, authentification et validation des données, pour alimenter une application web ou mobile.</p>
+                <div class="project-tech service-tech">
+                    <span class="tech-tag"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg" alt="" width="14" height="14" loading="lazy">Laravel</span>
+                    <span class="tech-tag"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" alt="" width="14" height="14" loading="lazy">PHP</span>
+                    <span class="tech-tag"><i class="fas fa-plug tech-icon-fa" aria-hidden="true"></i>REST</span>
+                    <span class="tech-tag"><i class="fas fa-code tech-icon-fa" aria-hidden="true"></i>JSON</span>
+                </div>
             </div>
 
             <div class="service-card">
-                <div class="service-icon"><img src="./icons/tools.svg" alt="WordPress & CMS" data-i18n-attr="alt:services.cms.title" class="icon-img"/></div>
-                <h3 data-i18n="services.cms.title">WordPress & CMS</h3>
-                <p data-i18n="services.cms.text">Solutions WordPress professionnelles et personnalisées. Intégration de plugins, optimisation SEO et gestion de contenu facile.</p>
+                <div class="service-icon"><img src="./icons/mobile.svg" alt="Applications mobiles" data-i18n-attr="alt:services.mobile.title" class="icon-img"/></div>
+                <h3 data-i18n="services.mobile.title">Applications mobiles</h3>
+                <p data-i18n="services.mobile.text">Applications Flutter connectées à Firebase ou à une base SQLite locale, et applications Android avec App Inventor.</p>
+                <div class="project-tech service-tech">
+                    <span class="tech-tag"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg" alt="" width="14" height="14" loading="lazy">Flutter</span>
+                    <span class="tech-tag"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-original.svg" alt="" width="14" height="14" loading="lazy">Firebase</span>
+                    <span class="tech-tag"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original.svg" alt="" width="14" height="14" loading="lazy">SQLite</span>
+                    <span class="tech-tag"><i class="fas fa-mobile-screen tech-icon-fa" aria-hidden="true"></i>App Inventor</span>
+                </div>
             </div>
 
             <div class="service-card">
-                <div class="service-icon"><img src="./icons/lightning.svg" alt="No-Code & Low-Code" data-i18n-attr="alt:services.nocode.title" class="icon-img"/></div>
-                <h3 data-i18n="services.nocode.title">No-Code & Low-Code</h3>
-                <p data-i18n="services.nocode.text">Solutions rapides avec les plateformes no-code et low-code. Automatisation des processus et prototypage rapide de vos concepts.</p>
+                <div class="service-icon"><img src="./icons/design.svg" alt="Conception UI/UX" data-i18n-attr="alt:services.ui.title" class="icon-img"/></div>
+                <h3 data-i18n="services.ui.title">Conception UI/UX</h3>
+                <p data-i18n="services.ui.text">Maquettes et prototypes interactifs sous Figma : parcours utilisateur, interface claire et navigation entre les écrans.</p>
+                <div class="project-tech service-tech">
+                    <span class="tech-tag"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" alt="" width="14" height="14" loading="lazy">Figma</span>
+                    <span class="tech-tag"><i class="fas fa-object-group tech-icon-fa" aria-hidden="true"></i>UI Design</span>
+                    <span class="tech-tag"><i class="fas fa-route tech-icon-fa" aria-hidden="true"></i>UX Design</span>
+                    <span class="tech-tag"><i class="fas fa-hand-pointer tech-icon-fa" aria-hidden="true"></i><span data-i18n="tags.interactive">Prototype interactif</span></span>
+                </div>
             </div>
+
+            <div class="service-card">
+                <div class="service-icon"><img src="./icons/tools.svg" alt="Débogage et maintenance" data-i18n-attr="alt:services.debug.title" class="icon-img"/></div>
+                <h3 data-i18n="services.debug.title">Débogage et maintenance</h3>
+                <p data-i18n="services.debug.text">Recherche et correction de bugs, amélioration du code et sécurisation d'applications PHP et Laravel.</p>
+                <div class="project-tech service-tech">
+                    <span class="tech-tag"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" alt="" width="14" height="14" loading="lazy">PHP</span>
+                    <span class="tech-tag"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg" alt="" width="14" height="14" loading="lazy">Laravel</span>
+                    <span class="tech-tag"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="" width="14" height="14" loading="lazy">Git &amp; GitHub</span>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon"><img src="./icons/lightning.svg" alt="WordPress, no-code & low-code" data-i18n-attr="alt:services.nocode.title" class="icon-img"/></div>
+                <h3 data-i18n="services.nocode.title">WordPress, no-code & low-code</h3>
+                <p data-i18n="services.nocode.text">Des bases pour réaliser des sites WordPress (thèmes, extensions) et prototyper rapidement des applications simples avec FlutterFlow ou App Inventor.</p>
+                <div class="project-tech service-tech">
+                    <span class="tech-tag"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/wordpress/wordpress-plain.svg" alt="" width="14" height="14" loading="lazy">WordPress</span>
+                    <span class="tech-tag"><i class="fas fa-bolt tech-icon-fa" aria-hidden="true"></i>FlutterFlow</span>
+                    <span class="tech-tag"><i class="fas fa-mobile-screen tech-icon-fa" aria-hidden="true"></i>App Inventor</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="services-cta">
+            <a href="#contact" class="btn btn-primary" data-i18n="services.cta">Parlons de votre projet</a>
         </div>
     </section> 
 
