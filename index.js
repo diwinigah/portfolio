@@ -107,6 +107,27 @@ const t = (key, params) => (window.i18n ? window.i18n.t(key, params) : key);
             }
         });
 
+        // Bouton « Copier l'e-mail »
+        const copyBtn = document.querySelector('.copy-btn');
+        if (copyBtn) {
+            let copyTimer;
+            const showCopyResult = key => {
+                copyBtn.textContent = t(key);
+                clearTimeout(copyTimer);
+                copyTimer = setTimeout(() => {
+                    if (window.i18n) window.i18n.retranslate(copyBtn);
+                }, 2000);
+            };
+            copyBtn.addEventListener('click', async () => {
+                try {
+                    await navigator.clipboard.writeText(copyBtn.dataset.copy);
+                    showCopyResult('contact.copy.done');
+                } catch (error) {
+                    showCopyResult('contact.copy.fail');
+                }
+            });
+        }
+
         // ---------- Menu mobile : fermeture avec Echap ou clic en dehors ----------
         function closeMenu() {
             nav.classList.remove('active');

@@ -29,8 +29,10 @@ window.I18N = {
             'theme.toLight': 'Activer le mode clair',
             'lang.switch': 'Passer le site en anglais',
             'contact.form.sending': 'Envoi en cours...',
-            'contact.form.success': 'Merci, votre message a bien été envoyé.',
-            'contact.form.error': 'Une erreur est survenue. Veuillez réessayer dans quelques instants.'
+            'contact.form.success': 'Merci, votre message a bien été envoyé. Je vous réponds sous 48 h.',
+            'contact.form.error': 'Une erreur est survenue. Veuillez réessayer dans quelques instants.',
+            'contact.copy.done': 'E-mail copié',
+            'contact.copy.fail': 'Copie impossible'
         },
         en: {
             'menu.open': 'Open the navigation menu',
@@ -39,8 +41,10 @@ window.I18N = {
             'theme.toLight': 'Switch to light mode',
             'lang.switch': 'Switch the site to French',
             'contact.form.sending': 'Sending...',
-            'contact.form.success': 'Thank you, your message has been sent.',
-            'contact.form.error': 'Something went wrong. Please try again in a few moments.'
+            'contact.form.success': 'Thank you, your message has been sent. I will reply within 48 hours.',
+            'contact.form.error': 'Something went wrong. Please try again in a few moments.',
+            'contact.copy.done': 'Email copied',
+            'contact.copy.fail': 'Copy failed'
         }
     },
 
@@ -181,14 +185,21 @@ window.I18N = {
 
         /* Contact */
         'contact.title': 'Get in <span>Touch</span>',
-        'contact.subtitle': 'Feel free to reach out to discuss your projects',
+        'contact.subtitle': 'An internship, a job or a project to build? Write to me and I will reply within 48 hours.',
         'contact.phone': 'Phone',
         'contact.location': 'Location',
+        'contact.tz': 'Time zone: GMT (UTC+0)',
+        'contact.copy': 'Copy email',
+        'contact.whatsapp.cta': 'Message me on WhatsApp',
         'contact.form.name': 'Full name',
         'contact.form.subject': 'Subject',
         'contact.form.namePh': 'Your name',
         'contact.form.emailPh': 'Your email (e.g. example@gmail.com)',
-        'contact.form.subjectPh': 'Subject',
+        'contact.form.subjectPh': 'Choose a subject',
+        'contact.form.subject.internship': 'Internship',
+        'contact.form.subject.job': 'Job',
+        'contact.form.subject.project': 'Project to build',
+        'contact.form.subject.other': 'Other',
         'contact.form.messagePh': 'Write your message...',
         'contact.form.submit': 'Send message',
 

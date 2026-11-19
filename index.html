@@ -501,20 +501,21 @@
    
     <section id="contact" class="contact">
         <h2 class="section-title" data-i18n-html="contact.title">Me <span>Contacter</span></h2>
-        <p class="section-subtitle" data-i18n="contact.subtitle">N'hésitez pas à me joindre pour discuter de vos projets</p>
+        <p class="section-subtitle" data-i18n="contact.subtitle">Un stage, un emploi ou un projet à réaliser ? Écrivez-moi, je vous réponds sous 48 h.</p>
         
         <div class="contact-content">
             <div class="contact-info">
                 <div class="contact-item">
-                    <div class="contact-icon"><img src="./icons/email.svg" alt="Email" class="icon-img"/></div>
+                    <div class="contact-icon"><img src="./icons/email.svg" alt="" class="icon-img"/></div>
                     <div class="contact-details">
                         <h3>Email</h3>
-                        <p><a href="mailto:winidorc1@gmail.com">winidorc1@gmail.com</a></p>
+                        <p><a href="mailto:saguintaah.nathanael@gmail.com">saguintaah.nathanael@gmail.com</a></p>
+                        <button type="button" class="copy-btn" data-copy="saguintaah.nathanael@gmail.com" data-i18n="contact.copy">Copier l'e-mail</button>
                     </div>
                 </div>
 
                 <div class="contact-item">
-                    <div class="contact-icon"><img src="./icons/phone.svg" alt="Téléphone" data-i18n-attr="alt:contact.phone" class="icon-img"/></div>
+                    <div class="contact-icon"><img src="./icons/phone.svg" alt="" class="icon-img"/></div>
                     <div class="contact-details">
                         <h3 data-i18n="contact.phone">Téléphone</h3>
                         <p><a href="tel:+22893403768">+228 93 40 37 68</a></p>
@@ -522,28 +523,45 @@
                 </div>
 
                 <div class="contact-item">
-                    <div class="contact-icon"><img src="./icons/location.svg" alt="Localisation" data-i18n-attr="alt:contact.location" class="icon-img"/></div>
+                    <div class="contact-icon" aria-hidden="true"><i class="fab fa-whatsapp"></i></div>
+                    <div class="contact-details">
+                        <h3>WhatsApp</h3>
+                        <p><a href="https://wa.me/22893403768" target="_blank" rel="noopener noreferrer" data-i18n="contact.whatsapp.cta">Écrire sur WhatsApp</a></p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon"><img src="./icons/location.svg" alt="" class="icon-img"/></div>
                     <div class="contact-details">
                         <h3 data-i18n="contact.location">Localisation</h3>
                         <p>Lomé, Togo</p>
+                        <p class="contact-meta" data-i18n="contact.tz">Fuseau horaire : GMT (UTC+0)</p>
                     </div>
                 </div>
             </div>
 
             <form action="https://formspree.io/f/mqavwnqz" method="post" class="contact-form" id="contactForm" >
+                <!-- Champ piège anti-spam (invisible pour les visiteurs, reconnu par Formspree) -->
+                <input type="text" name="_gotcha" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
                 <div class="form-group">
                     <label for="name" data-i18n="contact.form.name">Nom complet</label>
-                    <input type="text" id="name" name="name" placeholder="Votre nom" data-i18n-attr="placeholder:contact.form.namePh" required>
+                    <input type="text" id="name" name="name" autocomplete="name" placeholder="Votre nom" data-i18n-attr="placeholder:contact.form.namePh" required>
                 </div>
 
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="Votre e-mail (ex. exemple@gmail.com)" data-i18n-attr="placeholder:contact.form.emailPh" required>
+                    <input type="email" id="email" name="email" autocomplete="email" placeholder="Votre e-mail (ex. exemple@gmail.com)" data-i18n-attr="placeholder:contact.form.emailPh" required>
                 </div>
 
                 <div class="form-group">
                     <label for="subject" data-i18n="contact.form.subject">Sujet</label>
-                    <input type="text" id="subject" name="subject" placeholder="Sujet" data-i18n-attr="placeholder:contact.form.subjectPh" required>
+                    <select id="subject" name="subject" required>
+                        <option value="" disabled selected data-i18n="contact.form.subjectPh">Choisissez un sujet</option>
+                        <option value="Stage" data-i18n="contact.form.subject.internship">Stage</option>
+                        <option value="Emploi" data-i18n="contact.form.subject.job">Emploi</option>
+                        <option value="Projet à réaliser" data-i18n="contact.form.subject.project">Projet à réaliser</option>
+                        <option value="Autre" data-i18n="contact.form.subject.other">Autre</option>
+                    </select>
                 </div>
 
                 <div class="form-group">

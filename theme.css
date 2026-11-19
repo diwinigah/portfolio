@@ -1251,3 +1251,117 @@ html.theme-switching *::after {
         grid-template-columns: 1fr;
     }
 }
+
+/* =========================================================
+   CONTACT : WhatsApp, copie de l'e-mail, liste de sujets, anti-spam
+   ========================================================= */
+.contact-icon .fa-whatsapp {
+    color: #ffffff;
+    font-size: 1.9rem;
+}
+
+.contact-details .contact-meta {
+    margin-top: 0.15rem;
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+.copy-btn {
+    margin-top: 0.5rem;
+    padding: 0.35rem 0.9rem;
+    border: 1px solid var(--primary);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--primary);
+    font-family: inherit;
+    font-size: 0.78rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.copy-btn:hover {
+    background: var(--primary);
+    color: #ffffff;
+}
+
+.copy-btn:focus-visible {
+    outline: 3px solid rgba(111, 45, 244, 0.4);
+    outline-offset: 3px;
+}
+
+/* Champ piège : hors écran, jamais visible ni atteignable au clavier */
+.hp-field {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Liste de sujets : même apparence que les autres champs */
+.form-group select {
+    padding: 0.8rem;
+    border: 1px solid rgba(111, 45, 244, 0.16);
+    border-radius: 16px;
+    background: #fbfaff;
+    color: #171717;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group select:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 10px rgba(111, 45, 244, 0.2);
+}
+
+/* Message d'état plus visible après l'envoi */
+.form-status:not(:empty) {
+    padding: 0.85rem 1rem;
+    border: 1px solid transparent;
+    border-radius: 14px;
+}
+
+.form-status--success:not(:empty) {
+    background: rgba(34, 197, 94, 0.1);
+    border-color: rgba(34, 197, 94, 0.35);
+    color: #15803d;
+}
+
+.form-status--error:not(:empty) {
+    background: rgba(239, 68, 68, 0.1);
+    border-color: rgba(239, 68, 68, 0.35);
+    color: #b91c1c;
+}
+
+[data-theme="dark"] .form-group select {
+    background: #120f24;
+    border-color: var(--line);
+    color: var(--ink);
+}
+
+[data-theme="dark"] .form-group select:focus {
+    background: #171232;
+    border-color: var(--primary);
+}
+
+[data-theme="dark"] .copy-btn {
+    color: var(--primary-soft);
+    border-color: var(--primary-soft);
+}
+
+[data-theme="dark"] .copy-btn:hover {
+    background: var(--primary);
+    color: #ffffff;
+}
+
+[data-theme="dark"] .form-status--success:not(:empty) {
+    color: #4ade80;
+}
+
+[data-theme="dark"] .form-status--error:not(:empty) {
+    color: #f87171;
+}
