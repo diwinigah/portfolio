@@ -243,173 +243,149 @@
     <!-- Skills Section -->
     <section id="competences" class="skills">
         <h2 class="section-title" data-i18n-html="skills.title">Mes <span>Compétences</span></h2>
-        <p class="section-subtitle" data-i18n="skills.subtitle">Technologies et outils que je maîtrise</p>
+        <p class="section-subtitle" data-i18n="skills.subtitle">Les technologies que j'utilise dans mes projets, et où j'en suis avec chacune</p>
+        <p class="skills-note" data-i18n="skills.note">Je continue d'apprendre : le niveau indiqué reflète ma pratique actuelle.</p>
+
+        <ul class="skills-legend" aria-label="Légende des niveaux" data-i18n-attr="aria-label:skills.legend.aria">
+            <li><span class="skill-level" data-level="3"><span class="level-dots" aria-hidden="true"><i></i><i></i><i></i></span></span><span class="legend-text"><strong data-i18n="skills.level.3">À l'aise</strong> <span data-i18n="skills.legend.3">— utilisé régulièrement, sans avoir à chercher</span></span></li>
+            <li><span class="skill-level" data-level="2"><span class="level-dots" aria-hidden="true"><i></i><i></i><i></i></span></span><span class="legend-text"><strong data-i18n="skills.level.2">Pratique</strong> <span data-i18n="skills.legend.2">— utilisé dans un projet complet, de la conception à la mise en ligne</span></span></li>
+            <li><span class="skill-level" data-level="1"><span class="level-dots" aria-hidden="true"><i></i><i></i><i></i></span></span><span class="legend-text"><strong data-i18n="skills.level.1">Bases</strong> <span data-i18n="skills.legend.1">— appris et testé, mais pas encore utilisé en profondeur</span></span></li>
+        </ul>
         
-        <div class="skills-container">
-            <div class="skill-item">
-                <div class="skill-name">HTML5</div>
-                <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="Logo HTML5" loading="lazy">
-                <p data-i18n="skills.html5">Structuration sémantique moderne</p>
-                <div class="skill-proficiency">
-                    <div class="skill-proficiency-heading"><span data-i18n="skills.level">Intermédiaire</span><span>75%</span></div>
-                    <progress class="skill-progress" value="75" max="100" aria-label="Niveau de maîtrise : 75 %"></progress>
-                    <div class="skill-scale" aria-hidden="true"><span>0%</span><span>100%</span></div>
+        <div class="skills-groups">
+            <div class="skills-group">
+                <h3 class="skills-group-title" data-i18n="skills.cat.front">Front-end</h3>
+                <div class="skills-cards">
+                    <div class="skill-card">
+                        <div class="skill-card-head"><img class="skill-card-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="" width="30" height="30" loading="lazy"><h4 class="skill-card-name">HTML5</h4></div>
+                        <p class="skill-level" data-level="2"><span class="level-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="level-label" data-i18n="skills.level.2">Pratique</span></p>
+                        <p class="skill-used"><span class="skill-used-label" data-i18n="skills.usedLabel">Utilisé dans</span><span data-i18n="skills.used.html5">Portfolio, bibliothèque, garage</span></p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-card-head"><img class="skill-card-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="" width="30" height="30" loading="lazy"><h4 class="skill-card-name">CSS3</h4></div>
+                        <p class="skill-level" data-level="2"><span class="level-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="level-label" data-i18n="skills.level.2">Pratique</span></p>
+                        <p class="skill-used"><span class="skill-used-label" data-i18n="skills.usedLabel">Utilisé dans</span><span data-i18n="skills.used.css3">Portfolio, garage (design responsive)</span></p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-card-head"><img class="skill-card-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="" width="30" height="30" loading="lazy"><h4 class="skill-card-name">JavaScript</h4></div>
+                        <p class="skill-level" data-level="2"><span class="level-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="level-label" data-i18n="skills.level.2">Pratique</span></p>
+                        <p class="skill-used"><span class="skill-used-label" data-i18n="skills.usedLabel">Utilisé dans</span><span data-i18n="skills.used.js">Portfolio, bibliothèque, garage</span></p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-card-head"><img class="skill-card-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="" width="30" height="30" loading="lazy"><h4 class="skill-card-name">React</h4></div>
+                        <p class="skill-level" data-level="2"><span class="level-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="level-label" data-i18n="skills.level.2">Pratique</span></p>
+                        <p class="skill-used"><span data-i18n="skills.used.react">En apprentissage</span></p>
+                    </div>
                 </div>
             </div>
 
-            <div class="skill-item">
-                <div class="skill-name">CSS3</div>
-                <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="Logo CSS3" loading="lazy">
-                <p data-i18n="skills.css3">Animations et design responsive</p>
-                <div class="skill-proficiency">
-                    <div class="skill-proficiency-heading"><span data-i18n="skills.level">Intermédiaire</span><span>70%</span></div>
-                    <progress class="skill-progress" value="70" max="100" aria-label="Niveau de maîtrise : 70 %"></progress>
-                    <div class="skill-scale" aria-hidden="true"><span>0%</span><span>100%</span></div>
+            <div class="skills-group">
+                <h3 class="skills-group-title" data-i18n="skills.cat.back">Back-end et bases de données</h3>
+                <div class="skills-cards">
+                    <div class="skill-card">
+                        <div class="skill-card-head"><img class="skill-card-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" alt="" width="30" height="30" loading="lazy"><h4 class="skill-card-name">PHP</h4></div>
+                        <p class="skill-level" data-level="2"><span class="level-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="level-label" data-i18n="skills.level.2">Pratique</span></p>
+                        <p class="skill-used"><span class="skill-used-label" data-i18n="skills.usedLabel">Utilisé dans</span><span data-i18n="skills.used.php">Bibliothèque, garage</span></p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-card-head"><img class="skill-card-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg" alt="" width="30" height="30" loading="lazy"><h4 class="skill-card-name">Laravel</h4></div>
+                        <p class="skill-level" data-level="2"><span class="level-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="level-label" data-i18n="skills.level.2">Pratique</span></p>
+                        <p class="skill-used"><span class="skill-used-label" data-i18n="skills.usedLabel">Utilisé dans</span><span data-i18n="skills.used.laravel">Garage, plateforme de l'association</span></p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-card-head"><img class="skill-card-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="" width="30" height="30" loading="lazy"><h4 class="skill-card-name">SQL (MySQL)</h4></div>
+                        <p class="skill-level" data-level="2"><span class="level-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="level-label" data-i18n="skills.level.2">Pratique</span></p>
+                        <p class="skill-used"><span class="skill-used-label" data-i18n="skills.usedLabel">Utilisé dans</span><span data-i18n="skills.used.sql">Bibliothèque, garage</span></p>
+                    </div>
                 </div>
             </div>
 
-            <div class="skill-item">
-                <div class="skill-name">JavaScript</div>
-                <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="Logo JavaScript" loading="lazy">
-                <p data-i18n="skills.js">ES6+ et programmation asynchrone</p>
-                <div class="skill-proficiency">
-                    <div class="skill-proficiency-heading"><span data-i18n="skills.level">Intermédiaire</span><span>45%</span></div>
-                    <progress class="skill-progress" value="45" max="100" aria-label="Niveau de maîtrise : 45 %"></progress>
-                    <div class="skill-scale" aria-hidden="true"><span>0%</span><span>100%</span></div>
+            <div class="skills-group">
+                <h3 class="skills-group-title" data-i18n="skills.cat.mobile">Mobile</h3>
+                <div class="skills-cards">
+                    <div class="skill-card">
+                        <div class="skill-card-head"><img class="skill-card-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg" alt="" width="30" height="30" loading="lazy"><h4 class="skill-card-name">Flutter</h4></div>
+                        <p class="skill-level" data-level="2"><span class="level-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="level-label" data-i18n="skills.level.2">Pratique</span></p>
+                        <p class="skill-used"><span class="skill-used-label" data-i18n="skills.usedLabel">Utilisé dans</span><span data-i18n="skills.used.flutter">Application connectée à Firebase</span></p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-card-head"><img class="skill-card-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-original.svg" alt="" width="30" height="30" loading="lazy"><h4 class="skill-card-name">Firebase Firestore</h4></div>
+                        <p class="skill-level" data-level="2"><span class="level-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="level-label" data-i18n="skills.level.2">Pratique</span></p>
+                        <p class="skill-used"><span class="skill-used-label" data-i18n="skills.usedLabel">Utilisé dans</span><span data-i18n="skills.used.firestore">Application Flutter</span></p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-card-head"><img class="skill-card-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original.svg" alt="" width="30" height="30" loading="lazy"><h4 class="skill-card-name">SQLite</h4></div>
+                        <p class="skill-level" data-level="1"><span class="level-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="level-label" data-i18n="skills.level.1">Bases</span></p>
+                        <p class="skill-used"><span data-i18n="skills.used.sqlite">Base locale mobile, en apprentissage</span></p>
+                    </div>
                 </div>
             </div>
 
-            <div class="skill-item">
-                <div class="skill-name">React</div>
-                <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="Logo React" loading="lazy">
-                <p data-i18n="skills.react">Composants et état d'application</p>
-                <div class="skill-proficiency">
-                    <div class="skill-proficiency-heading"><span data-i18n="skills.level">Intermédiaire</span><span>50%</span></div>
-                    <progress class="skill-progress" value="50" max="100" aria-label="Niveau de maîtrise : 50 %"></progress>
-                    <div class="skill-scale" aria-hidden="true"><span>0%</span><span>100%</span></div>
+            <div class="skills-group">
+                <h3 class="skills-group-title" data-i18n="skills.cat.lowcode">Low-code et CMS</h3>
+                <div class="skills-cards">
+                    <div class="skill-card">
+                        <div class="skill-card-head"><span class="skill-card-icon-fa" aria-hidden="true"><i class="fas fa-mobile-screen"></i></span><h4 class="skill-card-name">App Inventor</h4></div>
+                        <p class="skill-level" data-level="2"><span class="level-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="level-label" data-i18n="skills.level.2">Pratique</span></p>
+                        <p class="skill-used"><span data-i18n="skills.used.appinventor">Applications Android sans code</span></p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-card-head"><span class="skill-card-icon-fa" aria-hidden="true"><i class="fas fa-bolt"></i></span><h4 class="skill-card-name">FlutterFlow</h4></div>
+                        <p class="skill-level" data-level="1"><span class="level-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="level-label" data-i18n="skills.level.1">Bases</span></p>
+                        <p class="skill-used"><span data-i18n="skills.used.flutterflow">Prototypes d'applications simples</span></p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-card-head"><img class="skill-card-icon skill-card-icon--mono" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/wordpress/wordpress-plain.svg" alt="" width="30" height="30" loading="lazy"><h4 class="skill-card-name">WordPress</h4></div>
+                        <p class="skill-level" data-level="1"><span class="level-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="level-label" data-i18n="skills.level.1">Bases</span></p>
+                        <p class="skill-used"><span data-i18n="skills.used.wordpress">Sites simples : thèmes et extensions</span></p>
+                    </div>
                 </div>
             </div>
 
-            <div class="skill-item">
-                <div class="skill-name">Laravel</div>
-                <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg" alt="Logo Laravel" loading="lazy">
-                <p data-i18n="skills.laravel">Framework PHP moderne</p>
-                <div class="skill-proficiency">
-                    <div class="skill-proficiency-heading"><span data-i18n="skills.level">Intermédiaire</span><span>55%</span></div>
-                    <progress class="skill-progress" value="55" max="100" aria-label="Niveau de maîtrise : 55 %"></progress>
-                    <div class="skill-scale" aria-hidden="true"><span>0%</span><span>100%</span></div>
+            <div class="skills-group">
+                <h3 class="skills-group-title" data-i18n="skills.cat.tools">Outils et design</h3>
+                <div class="skills-cards">
+                    <div class="skill-card">
+                        <div class="skill-card-head"><img class="skill-card-icon skill-card-icon--mono" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="" width="30" height="30" loading="lazy"><h4 class="skill-card-name">Git &amp; GitHub</h4></div>
+                        <p class="skill-level" data-level="3"><span class="level-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="level-label" data-i18n="skills.level.3">À l'aise</span></p>
+                        <p class="skill-used"><span class="skill-used-label" data-i18n="skills.usedLabel">Utilisé dans</span><span data-i18n="skills.used.git">Tous mes projets</span></p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-card-head"><img class="skill-card-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" alt="" width="30" height="30" loading="lazy"><h4 class="skill-card-name">Figma</h4></div>
+                        <p class="skill-level" data-level="2"><span class="level-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="level-label" data-i18n="skills.level.2">Pratique</span></p>
+                        <p class="skill-used"><span class="skill-used-label" data-i18n="skills.usedLabel">Utilisé dans</span><span data-i18n="skills.used.figma">Prototype UI/UX</span></p>
+                    </div>
                 </div>
             </div>
+            
 
-            <div class="skill-item">
-                <div class="skill-name">PHP</div>
-                <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" alt="Logo PHP" loading="lazy">
-                <p data-i18n="skills.php">Backend et gestion de base de données</p>
-                <div class="skill-proficiency">
-                    <div class="skill-proficiency-heading"><span data-i18n="skills.level">Intermédiaire</span><span>50%</span></div>
-                    <progress class="skill-progress" value="50" max="100" aria-label="Niveau de maîtrise : 50 %"></progress>
-                    <div class="skill-scale" aria-hidden="true"><span>0%</span><span>100%</span></div>
-                </div>
-            </div>
+            
 
-            <div class="skill-item">
-                <div class="skill-name">SQL</div>
-                <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="Logo MySQL" loading="lazy">
-                <p data-i18n="skills.sql">Bases de données relationnelles</p>
-                <div class="skill-proficiency">
-                    <div class="skill-proficiency-heading"><span data-i18n="skills.level">Intermédiaire</span><span>45%</span></div>
-                    <progress class="skill-progress" value="45" max="100" aria-label="Niveau de maîtrise : 45 %"></progress>
-                    <div class="skill-scale" aria-hidden="true"><span>0%</span><span>100%</span></div>
-                </div>
-            </div>
+            
 
-            <div class="skill-item">
-                <div class="skill-name">WordPress</div>
-                <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/wordpress/wordpress-plain.svg" alt="Logo WordPress" loading="lazy">
-                <p data-i18n="skills.wordpress">CMS et développement d'extensions</p>
-                <div class="skill-proficiency">
-                    <div class="skill-proficiency-heading"><span data-i18n="skills.level">Intermédiaire</span><span>35%</span></div>
-                    <progress class="skill-progress" value="35" max="100" aria-label="Niveau de maîtrise : 35 %"></progress>
-                    <div class="skill-scale" aria-hidden="true"><span>0%</span><span>100%</span></div>
-                </div>
-            </div>
+            
 
-            <div class="skill-item">
-                <div class="skill-name">Flutter</div>
-                <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg" alt="Logo Flutter" loading="lazy">
-                <p data-i18n="skills.flutter">Développement d'applications mobiles</p>
-                <div class="skill-proficiency">
-                    <div class="skill-proficiency-heading"><span data-i18n="skills.level">Intermédiaire</span><span>50%</span></div>
-                    <progress class="skill-progress" value="50" max="100" aria-label="Niveau de maîtrise : 50 %"></progress>
-                    <div class="skill-scale" aria-hidden="true"><span>0%</span><span>100%</span></div>
-                </div>
-            </div>
+            
 
-            <div class="skill-item">
-                <div class="skill-name">App Inventor</div>
-                <img class="skill-icon" src="./icons/tools.svg" alt="Logo App Inventor" loading="lazy">
-                <p data-i18n="skills.appinventor">App Inventor et création d'applications mobiles Android sans code</p>
-                <div class="skill-proficiency">
-                    <div class="skill-proficiency-heading"><span data-i18n="skills.level">Intermédiaire</span><span>64%</span></div>
-                    <progress class="skill-progress" value="64" max="100" aria-label="Niveau de maîtrise : 64 %"></progress>
-                    <div class="skill-scale" aria-hidden="true"><span>0%</span><span>100%</span></div>
-                </div>
-            </div>
+            
 
-            <div class="skill-item">
-                <div class="skill-name">FlutterFlow</div>
-                <img class="skill-icon" src="./icons/lightning.svg" alt="Logo FlutterFlow" loading="lazy">
-                <p data-i18n="skills.flutterflow">Développement d'applications web et mobiles Low-Code</p>
-                <div class="skill-proficiency">
-                    <div class="skill-proficiency-heading"><span data-i18n="skills.level">Intermédiaire</span><span>50%</span></div>
-                    <progress class="skill-progress" value="50" max="100" aria-label="Niveau de maîtrise : 50 %"></progress>
-                    <div class="skill-scale" aria-hidden="true"><span>0%</span><span>100%</span></div>
-                </div>
-            </div>
+            
 
-            <div class="skill-item">
-                <div class="skill-name">Firebase Firestore</div>
-                <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-original.svg" alt="Logo Firebase" loading="lazy">
-                <p data-i18n="skills.firestore">Base de données NoSQL pour applications mobiles</p>
-                <div class="skill-proficiency">
-                    <div class="skill-proficiency-heading"><span data-i18n="skills.level">Intermédiaire</span><span>50%</span></div>
-                    <progress class="skill-progress" value="50" max="100" aria-label="Niveau de maîtrise : 50 %"></progress>
-                    <div class="skill-scale" aria-hidden="true"><span>0%</span><span>100%</span></div>
-                </div>
-            </div>
+            
 
-            <div class="skill-item">
-                <div class="skill-name">SQLite</div>
-                <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original.svg" alt="Logo SQLite" loading="lazy">
-                <p data-i18n="skills.sqlite">Base de données locale pour applications mobiles</p>
-                <div class="skill-proficiency">
-                    <div class="skill-proficiency-heading"><span data-i18n="skills.level">Intermédiaire</span><span>50%</span></div>
-                    <progress class="skill-progress" value="50" max="100" aria-label="Niveau de maîtrise : 50 %"></progress>
-                    <div class="skill-scale" aria-hidden="true"><span>0%</span><span>100%</span></div>
-                </div>
-            </div>
+            
 
-            <div class="skill-item">
-                <div class="skill-name">Git & GitHub</div>
-                <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="Logo GitHub" loading="lazy">
-                <p data-i18n="skills.git">Contrôle de version</p>
-                <div class="skill-proficiency">
-                    <div class="skill-proficiency-heading"><span data-i18n="skills.level">Intermédiaire</span><span>78%</span></div>
-                    <progress class="skill-progress" value="78" max="100" aria-label="Niveau de maîtrise : 78 %"></progress>
-                    <div class="skill-scale" aria-hidden="true"><span>0%</span><span>100%</span></div>
-                </div>
-            </div>
+            
 
-            <div class="skill-item">
-                <div class="skill-name">Figma</div>
-                <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" alt="Logo Figma" loading="lazy">
-                <p data-i18n="skills.figma">Conception d'interfaces et prototypage</p>
-                <div class="skill-proficiency">
-                    <div class="skill-proficiency-heading"><span data-i18n="skills.level">Intermédiaire</span><span>60%</span></div>
-                    <progress class="skill-progress" value="60" max="100" aria-label="Niveau de maîtrise : 60 %"></progress>
-                    <div class="skill-scale" aria-hidden="true"><span>0%</span><span>100%</span></div>
-                </div>
-            </div>
+            
+
+            
+
+            
+
+            
+
+            
         </div>
     </section>
 

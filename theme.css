@@ -361,46 +361,38 @@ html.theme-switching *::after {
 }
 
 /* Compétences */
-[data-theme="dark"] .skill-item {
+[data-theme="dark"] .skills-legend,
+[data-theme="dark"] .skill-card {
+    background: var(--surface-2);
     border-color: var(--line);
-    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
 }
 
-[data-theme="dark"] .skill-item::before {
-    background: #1b1731;
-}
-
-[data-theme="dark"] .skill-item::after {
-    background: #2b2350;
-}
-
-[data-theme="dark"] .skill-item:hover::after {
-    background: #4c2bb0;
-}
-
-[data-theme="dark"] .skill-item .skill-name,
-[data-theme="dark"] .skill-item p,
-[data-theme="dark"] .skill-proficiency-heading {
+[data-theme="dark"] .skills-legend strong,
+[data-theme="dark"] .skills-group-title,
+[data-theme="dark"] .skill-card-name {
     color: var(--ink);
 }
 
-[data-theme="dark"] .skill-scale {
-    color: #a29cc0;
+[data-theme="dark"] .skills-group-title::after {
+    background: var(--line);
 }
 
-[data-theme="dark"] .skill-progress,
-[data-theme="dark"] .skill-progress::-webkit-progress-bar {
-    background: #3a3458;
+[data-theme="dark"] .level-dots i {
+    background: rgba(167, 139, 250, 0.25);
+}
+
+[data-theme="dark"] .skill-level .level-label {
+    color: var(--primary-soft);
+}
+
+[data-theme="dark"] .skill-card:hover {
+    border-color: var(--primary-soft);
+    box-shadow: 0 18px 40px rgba(139, 92, 246, 0.22);
 }
 
 /* Icônes sombres rendues lisibles sur fond sombre */
-[data-theme="dark"] .skill-icon[alt="Logo GitHub"],
-[data-theme="dark"] .skill-icon[alt="Logo WordPress"] {
+[data-theme="dark"] .skill-card-icon--mono {
     filter: invert(1);
-}
-
-[data-theme="dark"] .skill-icon[src^="./icons/"] {
-    filter: brightness(0) invert(1);
 }
 
 /* Projets */
@@ -1072,6 +1064,190 @@ html.theme-switching *::after {
 
 @media (max-width: 620px) {
     .services-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================================================
+   COMPÉTENCES : niveaux, légende, catégories, cartes
+   ========================================================= */
+.skills-note {
+    max-width: 600px;
+    margin: -2rem auto 2rem;
+    text-align: center;
+    font-size: 0.95rem;
+    color: var(--text);
+}
+
+/* Légende affichée une fois en haut de la section */
+.skills-legend {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem 1.5rem;
+    max-width: 960px;
+    margin: 0 auto 3rem;
+    padding: 1.1rem 1.4rem;
+    border: 1px solid rgba(111, 45, 244, 0.12);
+    border-radius: 18px;
+    background: #fbfaff;
+}
+
+.skills-legend li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.85rem;
+    line-height: 1.45;
+    color: var(--text);
+}
+
+.skills-legend strong {
+    color: #171717;
+}
+
+.skills-legend .skill-level {
+    margin-top: 0.3rem;
+}
+
+/* Indicateur à trois points */
+.skill-level {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    margin: 0;
+}
+
+.level-dots {
+    display: inline-flex;
+    gap: 4px;
+    flex-shrink: 0;
+}
+
+.level-dots i {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(111, 45, 244, 0.18);
+}
+
+.skill-level[data-level="1"] .level-dots i:nth-child(-n+1),
+.skill-level[data-level="2"] .level-dots i:nth-child(-n+2),
+.skill-level[data-level="3"] .level-dots i {
+    background: var(--primary);
+}
+
+.skill-level .level-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+/* Catégories */
+.skills-groups {
+    display: grid;
+    gap: 2.5rem;
+}
+
+.skills-group-title {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    margin-bottom: 1rem;
+    font-size: 1.05rem;
+    color: #171717;
+}
+
+.skills-group-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(111, 45, 244, 0.15);
+}
+
+.skills-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    gap: 1rem;
+}
+
+/* Cartes simples et compactes */
+.skill-card {
+    padding: 1rem 1.1rem;
+    border: 1px solid rgba(111, 45, 244, 0.12);
+    border-radius: 16px;
+    background: #ffffff;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--primary);
+    box-shadow: 0 14px 32px rgba(111, 45, 244, 0.14);
+}
+
+.skill-card-head {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 0.6rem;
+}
+
+.skill-card-icon {
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+    object-fit: contain;
+}
+
+.skill-card-icon-fa {
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    border-radius: 8px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-soft));
+    color: #ffffff;
+    font-size: 0.85rem;
+}
+
+.skill-card-name {
+    font-size: 0.98rem;
+    font-weight: 600;
+    line-height: 1.25;
+    color: #171717;
+}
+
+.skill-used {
+    margin: 0.6rem 0 0;
+    font-size: 0.78rem;
+    line-height: 1.4;
+    color: var(--text);
+}
+
+.skill-used-label {
+    display: block;
+    margin-bottom: 0.1rem;
+    font-size: 0.66rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.85;
+}
+
+@media (max-width: 768px) {
+    .skills-legend {
+        grid-template-columns: 1fr;
+    }
+
+    .skills-note {
+        margin-top: -1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .skills-cards {
         grid-template-columns: 1fr;
     }
 }
