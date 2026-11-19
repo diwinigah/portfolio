@@ -72,7 +72,7 @@ window.I18N = {
         'hero.cta.projects': 'View my Projects',
         'hero.cta.contact': 'Contact me',
         'hero.cta.cv': 'Download my CV',
-        'hero.cta.cvHref': './document/CV_Nathanael_Saguintaah_.docx',
+        'hero.cta.cvHref': './document/CV_Nathanael_Saguintaah_EN.pdf',
         'hero.photoAlt': 'Profile photo - Nathanael Saguintaah',
 
         /* À propos */
