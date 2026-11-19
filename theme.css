@@ -200,13 +200,36 @@ html.theme-switching *::after {
         transition: max-height 0.4s ease, opacity 0.25s ease, padding 0.4s ease, visibility 0s;
     }
 
-    nav ul {
-        flex-direction: column;
-        gap: 0.25rem;
+    /* Liens en grille de deux colonnes plutôt qu'en colonne : plus compact, plus facile à toucher */
+    nav ul,
+    nav.active ul {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.6rem;
     }
 
-    nav a {
-        font-size: 1.05rem;
+    nav a,
+    nav.active a {
+        display: block;
+        padding: 0.85rem 0.5rem;
+        border: 1px solid rgba(111, 45, 244, 0.15);
+        border-radius: 14px;
+        text-align: center;
+        font-size: 1rem;
+    }
+
+    nav.active a.nav-link.active {
+        background: rgba(111, 45, 244, 0.1);
+        border-color: var(--primary);
+    }
+
+    [data-theme="dark"] nav.active a {
+        border-color: var(--line);
+    }
+
+    [data-theme="dark"] nav.active a.nav-link.active {
+        background: rgba(139, 92, 246, 0.18);
+        border-color: var(--primary-soft);
     }
 
     nav a::after {
@@ -1364,4 +1387,115 @@ html.theme-switching *::after {
 
 [data-theme="dark"] .form-status--error:not(:empty) {
     color: #f87171;
+}
+
+/* =========================================================
+   FOOTER : identité, liens rapides, réseaux, retour en haut
+   ========================================================= */
+footer {
+    padding: 3rem 1.5rem 2rem;
+}
+
+footer .footer-content {
+    display: grid;
+    justify-items: center;
+    gap: 1.5rem;
+}
+
+/* Textes lisibles sur le fond sombre (le gris précédent était trop pâle) */
+footer p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.footer-brand {
+    display: grid;
+    gap: 0.25rem;
+}
+
+footer .footer-name {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.footer-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem 1.75rem;
+}
+
+.footer-nav a {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.92rem;
+    text-decoration: none;
+}
+
+.footer-nav a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+    text-underline-offset: 6px;
+}
+
+/* Pastilles rondes de même taille, faciles à toucher */
+footer .social-links {
+    flex-wrap: wrap;
+    gap: 0.9rem;
+    margin-bottom: 0;
+}
+
+footer .social-links a {
+    width: 44px;
+    height: 44px;
+    display: inline-grid;
+    place-items: center;
+    font-size: 1.15rem;
+    transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+
+footer .social-links a:hover {
+    transform: translateY(-4px);
+    background: var(--primary);
+    color: #ffffff;
+    text-shadow: none;
+}
+
+.back-to-top {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1.1rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 999px;
+    color: #ffffff;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.back-to-top:hover {
+    background: #ffffff;
+    color: #171717;
+}
+
+footer a:focus-visible {
+    outline: 3px solid #ffffff;
+    outline-offset: 3px;
+}
+
+footer .social-links a:focus-visible,
+.back-to-top:focus-visible {
+    border-radius: 999px;
+}
+
+[data-theme="dark"] footer .social-links a {
+    background: #ffffff;
+    color: var(--primary);
+}
+
+[data-theme="dark"] footer .social-links a:hover {
+    background: var(--primary);
+    color: #ffffff;
 }

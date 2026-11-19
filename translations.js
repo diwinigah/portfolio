@@ -204,7 +204,15 @@ window.I18N = {
         'contact.form.submit': 'Send message',
 
         /* Footer */
-        'footer.rights': '© 2025 SAGUINTAAH B D Nathanael. All rights reserved.',
-        'footer.tagline': 'Web & Mobile Developer | Lomé, Togo'
+        'footer.rights': '© <span class="js-year">2026</span> SAGUINTAAH B D Nathanael. All rights reserved.',
+        'footer.tagline': 'Web & Mobile Developer | Lomé, Togo',
+        'footer.nav.aria': 'Quick links',
+        'footer.top': 'Back to top',
+        'footer.github.aria': 'GitHub (new tab)',
+        'footer.linkedin.aria': 'LinkedIn (new tab)',
+        'footer.facebook.aria': 'Facebook (new tab)',
+        'footer.whatsapp.aria': 'WhatsApp (new tab)',
+        'footer.whatsapp.href': 'https://wa.me/22893403768?text=Hello%20Nathanael%2C%20I%20am%20writing%20to%20you%20from%20your%20portfolio.',
+        'footer.email.aria': 'Send an email'
     }
 };

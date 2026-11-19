@@ -229,8 +229,15 @@ const t = (key, params) => (window.i18n ? window.i18n.t(key, params) : key);
             });
         }
 
+        // Année du copyright : toujours l'année en cours, dans les deux langues
+        function updateYear() {
+            document.querySelectorAll('.js-year').forEach(el => { el.textContent = new Date().getFullYear(); });
+        }
+        updateYear();
+
         // ---------- Changement de langue : met à jour les libellés générés par le JavaScript ----------
         document.addEventListener('i18n:change', () => {
+            updateYear();
             updateMenuLabel();
             applyTheme(root.getAttribute('data-theme') || 'light');
 
