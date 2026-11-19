@@ -1499,3 +1499,195 @@ footer .social-links a:focus-visible,
     background: var(--primary);
     color: #ffffff;
 }
+
+/* =========================================================
+   RESPONSIVE MOBILE : plus aucun débordement horizontal
+   (placé en dernier pour l'emporter sur index.css)
+   ========================================================= */
+
+/* Filet de sécurité : la page ne peut jamais être plus large que l'écran */
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+@supports (overflow: clip) {
+    html,
+    body {
+        overflow-x: clip;
+    }
+}
+
+img,
+svg,
+video {
+    max-width: 100%;
+}
+
+@media (max-width: 768px) {
+    /* Header : le logo se réduit au lieu de pousser les boutons hors de l'écran */
+    .header-container {
+        gap: 0.5rem;
+    }
+
+    .logo {
+        min-width: 0;
+        font-size: clamp(1rem, 4.6vw, 1.3rem);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .header-actions {
+        flex-shrink: 0;
+    }
+
+    /* Accueil : le titre ne déborde plus (il était bloqué à 3 rem) */
+    .hero {
+        padding: 4.5rem 1.25rem 3rem;
+    }
+
+    .hero-content {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 2rem;
+        padding: 0;
+    }
+
+    .hero-text h1 {
+        font-size: clamp(1.9rem, 9vw, 2.8rem);
+        line-height: 1.1;
+        max-width: 100%;
+        overflow-wrap: break-word;
+    }
+
+    .hero-text p {
+        max-width: 100%;
+    }
+
+    .hero-text .hero-role,
+    .hero-text .hero-badge {
+        max-width: 100%;
+    }
+
+    .hero-text .hero-badge {
+        text-align: left;
+    }
+
+    /* Sections : toutes les grilles restent dans l'écran */
+    section {
+        padding: 3rem 1.25rem;
+    }
+
+    .about-content,
+    .contact-content,
+    .projects-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .section-title,
+    .projects .section-title {
+        font-size: clamp(1.8rem, 8vw, 2.4rem);
+        overflow-wrap: break-word;
+    }
+
+    .about-text,
+    .about-facts li > div,
+    .project-card,
+    .project-content,
+    .service-card,
+    .skill-card {
+        min-width: 0;
+    }
+
+    .about-text p,
+    .project-content p,
+    .service-card p {
+        overflow-wrap: break-word;
+    }
+
+    /* Contact : l'e-mail long passe à la ligne, le formulaire reste dans l'écran */
+    .contact-item,
+    .contact-details {
+        min-width: 0;
+    }
+
+    .contact-details a,
+    .contact-details p {
+        overflow-wrap: anywhere;
+    }
+
+    .contact-form,
+    .form-group,
+    .form-group input,
+    .form-group select,
+    .form-group textarea,
+    .submit-btn {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    /* Apparition au scroll : plus de glissement latéral, il élargissait la page */
+    .reveal.reveal-left,
+    .reveal.reveal-right {
+        transform: translateY(28px);
+    }
+
+    .reveal.is-visible {
+        transform: none;
+    }
+
+    /* Cartes de compétences : jamais plus larges que la colonne */
+    .skills-cards {
+        grid-template-columns: repeat(auto-fill, minmax(min(210px, 100%), 1fr));
+    }
+}
+
+@media (max-width: 620px) {
+    .services-grid,
+    .projects-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .projects {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.75rem;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero-link {
+        justify-content: center;
+    }
+
+    .footer-nav {
+        gap: 0.5rem 1.25rem;
+    }
+}
+
+@media (max-width: 380px) {
+    .logo {
+        font-size: 1rem;
+    }
+
+    .menu-toggle {
+        width: 38px;
+        height: 38px;
+    }
+
+    .header-container {
+        padding: 0 0.75rem;
+    }
+}
