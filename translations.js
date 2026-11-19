@@ -154,7 +154,7 @@ window.I18N = {
         'projects.library.role': '<strong>My role:</strong> Complete development of the project, working independently, in vanilla PHP and without an application framework.',
         'projects.library.f1': 'Quick book search in the catalogue',
         'projects.library.f2': 'Adding titles (administrator)',
-        'projects.library.f3': 'Removing books from the collection (administrator)',
+        'projects.library.f3': 'Removing books from the collection',
         'projects.library.btnAria': 'View the site: online library (new tab)',
 
         'projects.garage.alt': 'Garage management application',
